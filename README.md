@@ -19,4 +19,4 @@ Just run `./install.sh` script. It will ask you git details _(user name and emai
 
 ## Scripts
 
-- `btc`: Current Bitcoin price from [Coinbase API](https://developers.coinbase.com). _(you need [Node.JS](https://nodejs.org) to run this script)_
+- `crypto`: Current Bitcoin price from [Cryptonator API](https://www.cryptonator.com/api/). _(you need [Node.JS](https://nodejs.org) to run this script)_
