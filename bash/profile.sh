@@ -27,6 +27,6 @@ fi
 CARGO_BIN=$HOME/.cargo/bin
 LOCAL_BIN=$HOME/.local/bin
 RGEMS_BIN=$HOME/.gem/bin
+PORTS_BIN="/opt/local/bin:/opt/local/sbin"
 
-PATH=$PATH:$CARGO_BIN:$LOCAL_BIN:$RGEMS_BIN
-export PATH
+export PATH="$LOCAL_BIN:$PORTS_BIN:$CARGO_BIN:$RGEMS_BIN:$PATH"
