@@ -36,15 +36,27 @@ if [[ $(uname) == "Darwin" ]]; then
     echo >> ~/.gitconfig;
 fi
 
-# Ask for git globals
-read -p "Do you wish to configure git user/email? [Y/n] " git
-case $git in
-    ""|y|Y*)
-        git_details;
-        ;;
-    *)
-        echo "Git details skipped.";
-        ;;  
-esac
+# Check for git configuration file
+if [[ -f $HOME/.gitconfig ]]; then
+    read -p "Git is already configured. Do you wish to override it? [Y/n] " git_file
+    case $git_file in
+        ""|y|Y*)
+            git_details;
+            ;;
+        *)
+            echo "Git details skipped.";
+            ;;  
+    esac
+else
+    read -p "Do you wish to configure git user/email? [Y/n] " git_config
+    case $git_config in
+        ""|y|Y*)
+            git_details;
+            ;;
+        *)
+            echo "Git details skipped.";
+            ;;  
+    esac
+fi
 
 printf "\n[OK] Configuration files were successfully installed.\n"
