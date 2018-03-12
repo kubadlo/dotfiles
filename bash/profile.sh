@@ -13,9 +13,6 @@ export EDITOR="vim"
 # Ignore duplicate commands in the history
 export HISTCONTROL=ignoredups
 
-# Save ruby gems in home folder instead of system
-export GEM_HOME=$HOME/.gem
-
 # Java installation path
 if [[ $(uname) == "Darwin" ]]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
@@ -26,7 +23,6 @@ fi
 # Configure PATH
 CARGO_BIN=$HOME/.cargo/bin
 LOCAL_BIN=$HOME/.local/bin
-RGEMS_BIN=$HOME/.gem/bin
 PORTS_BIN="/opt/local/bin:/opt/local/sbin"
 
-export PATH="$LOCAL_BIN:$PORTS_BIN:$CARGO_BIN:$RGEMS_BIN:$PATH"
+export PATH="$LOCAL_BIN:$PORTS_BIN:$CARGO_BIN:$PATH"
