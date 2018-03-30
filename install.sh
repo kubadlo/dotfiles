@@ -1,7 +1,21 @@
 #!/bin/bash
 
 # Configure git globals
-function git_details {
+function git_cofig {
+    # Git configuration
+    cp ./git/config.git  ~/.gitconfig
+    cp ./git/ignore.git  ~/.gitignore
+
+    # Set credential helper on macOS
+    if [[ $(uname) == "Darwin" ]]; then
+        echo "[credential]" >> ~/.gitconfig;
+        echo "    helper = osxkeychain" >> ~/.gitconfig;
+        echo >> ~/.gitconfig;
+    fi
+}
+
+function git_user {
+    # Configure user name and email
     read -p "What is your user name? " user;
     read -p "What is your email? " email;
 
@@ -22,36 +36,28 @@ cp ./bash/input.sh   ~/.inputrc
 mkdir -p ~/.local/bin
 cp ./bin/crypto ~/.local/bin/crypto
 
-# Git configuration
-cp ./git/config.git  ~/.gitconfig
-cp ./git/ignore.git  ~/.gitignore
-
 # Vim configuration
 cp ./vim/config.vim  ~/.vimrc
-
-# Set credential helper on macOS
-if [[ $(uname) == "Darwin" ]]; then
-    echo "[credential]" >> ~/.gitconfig;
-    echo "    helper = osxkeychain" >> ~/.gitconfig;
-    echo >> ~/.gitconfig;
-fi
 
 # Check for git configuration file
 if [[ -f $HOME/.gitconfig ]]; then
     read -p "Git is already configured. Do you wish to override it? [Y/n] " git_file
     case $git_file in
         ""|y|Y*)
-            git_details;
+            git_cofig;
+            git_user;
             ;;
         *)
             echo "Git details skipped.";
             ;;  
     esac
 else
+    git_config;
+
     read -p "Do you wish to configure git user/email? [Y/n] " git_config
     case $git_config in
         ""|y|Y*)
-            git_details;
+            git_user;
             ;;
         *)
             echo "Git details skipped.";
