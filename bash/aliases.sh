@@ -2,9 +2,9 @@
 
 # Check for ls version
 if [[ $(uname) == "Darwin" ]]; then
-  ls_color="-G"
+    ls_color="-G"
 else
-  ls_color="--color"
+    ls_color="--color"
 fi
 
 # List files and directories
@@ -32,5 +32,5 @@ alias trun='tr [A-Z] [a-z]'
 
 # Reset Launchpad layout on macOS
 if [[ $(uname) == "Darwin" ]]; then
-  alias rlaunch='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
+    alias rlaunch='defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock'
 fi
