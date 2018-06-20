@@ -23,6 +23,5 @@ fi
 # Configure PATH
 CARGO_BIN=$HOME/.cargo/bin
 LOCAL_BIN=$HOME/.local/bin
-PORTS_BIN="/opt/local/bin:/opt/local/sbin"
 
-export PATH="$LOCAL_BIN:$PORTS_BIN:$CARGO_BIN:$PATH"
+export PATH="$LOCAL_BIN:$CARGO_BIN:$PATH"
