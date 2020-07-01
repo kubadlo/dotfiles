@@ -11,8 +11,11 @@ set number
 set modeline
 set modelines=4
 
-" Make tabs as wide as four spaces
+" Set proper tabs
 set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
 
 " Highlight searches
 set hlsearch

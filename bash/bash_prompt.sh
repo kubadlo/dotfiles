@@ -27,9 +27,8 @@ function branch {
     fi
 }
 
-PS1="\n"
-PS1+="\[$bold\]\u\[$blue\] ‣ \[$reset\]"
-PS1+="\[$bold\]\h\[$blue\] ‣ \[$reset\]"
+PS1="\[$bold\]\u\[$blue\] > \[$reset\]"
+PS1+="\[$bold\]\h\[$blue\] > \[$reset\]"
 PS1+="\[$bold\]\w\[$reset\] "
 PS1+="\[$bold\]\[$blue\]\$(branch)\[$reset\]"
 PS1+="\n"
