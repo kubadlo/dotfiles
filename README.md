@@ -1,3 +1,3 @@
 # Dotfiles
 
-Minimalistic Linux dotfiles.
+Minimalistic macOS dotfiles.
