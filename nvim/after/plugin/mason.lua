@@ -16,6 +16,17 @@ require("mason-lspconfig").setup({
 
 local lsp = require("lspconfig")
 
+local format_filter = function(client)
+    local clients = {
+        "astro",
+        "cssls",
+        "html",
+        "tsserver",
+    }
+
+    return clients[client.name] == nil
+end
+
 local on_attach = function(_, bufnr)
     local bufopts = {
         noremap = true,
@@ -30,7 +41,11 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+    vim.keymap.set('n', '<space>f', function()
+        vim.lsp.buf.format({
+            filter = format_filter,
+        })
+    end, bufopts)
 end
 
 

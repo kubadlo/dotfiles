@@ -19,6 +19,11 @@ require("packer").startup(function(use)
     }
 
     use {
+        "jose-elias-alvarez/null-ls.nvim",
+        require = "nvim-lua/plenary.nvim",
+    }
+
+    use {
         "hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
