@@ -48,8 +48,8 @@ require("packer").startup(function(use)
     }
 
     use {
-        "catppuccin/nvim",
-        as = "catppuccin",
+        "rose-pine/neovim",
+        as = "rose-pine",
     }
 
     use "github/copilot.vim"

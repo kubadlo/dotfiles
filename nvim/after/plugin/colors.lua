@@ -1,6 +1,3 @@
-require("catppuccin").setup({
-    flavour = "macchiato",
-    transparent_background = true,
-})
+require("rose-pine").setup()
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "rose-pine"
