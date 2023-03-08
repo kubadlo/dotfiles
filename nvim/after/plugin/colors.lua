@@ -1,4 +1,5 @@
 require("rose-pine").setup({
+    disable_background = true,
     disable_italics = true
 })
 
