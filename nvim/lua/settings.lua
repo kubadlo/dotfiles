@@ -1,4 +1,4 @@
--- Show line numbers relatie to the cursor position
+-- Show line numbers relative to the cursor position
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -17,3 +17,7 @@ vim.opt.scrolloff = 4
 
 -- Show current file name in terminal title
 vim.opt.title = true
+
+-- Enable spell checker with US English
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
