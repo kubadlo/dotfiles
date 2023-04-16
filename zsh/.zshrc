@@ -5,5 +5,5 @@ eval "$(starship init zsh)"
 compctl -M '' 'm:{a-zA-Z}={A-Za-z}'
 
 # Aliases
-alias ls="ls -l --color=auto"
-alias ll="ls -la --color=auto"
+alias ls="ls -lh --color=auto"
+alias ll="ls -lha --color=auto"
