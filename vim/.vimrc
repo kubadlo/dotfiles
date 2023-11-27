@@ -1,9 +1,16 @@
 " Turn on syntax highlighting
 syntax on
 
+" Enable mouse support
+set mouse=a
+
 " Show line numbers relative to the cursor position
 set number
 set relativenumber
+
+" Make splits more consistent
+set splitbelow
+set splitright
 
 " Make <Tab> 4 spaces wide
 set tabstop=4
@@ -19,9 +26,12 @@ set smartindent
 set ignorecase
 set smartcase
 
-" Start scrolling 4 lines before window edge
-set scrolloff=4
-set sidescrolloff=4
+" Show search results while typing
+set incsearch
+
+" Start scrolling 5 lines before window edge
+set scrolloff=5
+set sidescrolloff=5
 
 " Show current file name in terminal title
 set title
@@ -31,3 +41,7 @@ let mapleader=" "
 
 " Builtin file menager
 nnoremap <leader>fv :Ex <cr>
+
+" Copy/paste with system clipboard
+nnoremap gy "+y
+nnoremap gp "+p
