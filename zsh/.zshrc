@@ -5,7 +5,7 @@ eval "$(starship init zsh)"
 compctl -M "" "m:{a-zA-Z}={A-Za-z}"
 
 # Aliases
-alias bat="bat -pP --theme=base16"
-alias fd="fd -H"
+alias cat="bat -pp --theme=base16"
+alias fd="fd -Hi"
 alias ls="ls -lh --color=auto"
 alias ll="ls -lha --color=auto"
