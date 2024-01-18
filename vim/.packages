@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git clone https://github.com/itchyny/lightline.vim ~/.vim/pack/plugins/start/lightline
