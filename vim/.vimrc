@@ -36,9 +36,6 @@ set sidescrolloff=5
 " Show current file name in terminal title
 set title
 
-" Enable status line
-set laststatus=2
-
 " Set leader key to space
 let mapleader=" "
 
