@@ -43,3 +43,7 @@ vim.opt.title = true
 
 -- Hide mode since it's visible in statusbar
 vim.opt.showmode = false
+
+-- Enable spell checker with US English
+vim.opt.spell = true
+vim.opt.spelllang = "en_us"
