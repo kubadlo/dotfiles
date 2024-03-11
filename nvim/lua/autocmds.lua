@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(event)
         local opts = { buffer = event.buf }
 
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover({ hover = 'single' }), opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
         vim.keymap.set('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', opts)
         vim.keymap.set('n', 'gt', '<cmd>Telescope lsp_type_definitions<CR>', opts)
