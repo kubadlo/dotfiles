@@ -5,12 +5,12 @@ eval "$(starship init zsh)"
 compctl -M "" "m:{a-zA-Z}={A-Za-z}"
 
 # Better defaults
-alias cat="bat -pp --theme=base16"
+alias bat="bat -pp --theme=base16"
 alias fd="fd -Hi"
 
 # Improve file listing
-alias ls="ls -lh --color=auto"
-alias ll="ls -lha --color=auto"
+alias ls="ls -lhG"
+alias ll="ls -lhAG"
 
 # Store go modules in hidden folder
 export GOPATH="$HOME/.go"
