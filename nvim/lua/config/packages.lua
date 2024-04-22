@@ -13,3 +13,5 @@ if not vim.loop.fs_stat(lazy_path) then
 end
 
 vim.opt.rtp:prepend(lazy_path)
+
+require('lazy').setup('plugins')

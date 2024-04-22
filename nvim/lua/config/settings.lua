@@ -41,9 +41,12 @@ vim.opt.termguicolors = true
 -- Show current file name in terminal title
 vim.opt.title = true
 
+-- Confirm changes before exiting modified buffer
+vim.opt.confirm = true
+
 -- Hide mode since it's visible in statusbar
 vim.opt.showmode = false
 
--- Enable spell checker with US English
+-- Enable spell checker
 vim.opt.spell = true
-vim.opt.spelllang = "en_us"
+vim.opt.spelllang = "en"

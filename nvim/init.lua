@@ -1,6 +1,4 @@
-require('settings')
-require('mappings')
-require('packages')
-require('autocmds')
-
-require('lazy').setup('plugins')
+require('config.settings')
+require('config.mappings')
+require('config.autocmds')
+require('config.packages')
