@@ -5,7 +5,7 @@ eval "$(starship init zsh)"
 compctl -M "" "m:{a-zA-Z}={A-Za-z}"
 
 # Better defaults
-alias bat="bat -pp --theme=base16"
+alias bat="bat -pp --theme=gruvbox-dark"
 alias fd="fd -Hi"
 
 # Improve file listing
