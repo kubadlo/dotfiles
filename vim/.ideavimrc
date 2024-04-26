@@ -19,12 +19,11 @@ set sidescrolloff=5
 " Perform join command via IDE
 set ideajoin
 
+" Hide mode in IDE's statusbar
+set noshowmode
+
 " Set leader key to space
 let mapleader=" "
-
-" Copy/paste with system clipboard
-nnoremap gy "+y
-nnoremap gp "+p
 
 " Emulate plugins
 Plug 'tpope/vim-commentary'

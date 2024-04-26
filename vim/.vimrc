@@ -41,7 +41,3 @@ let mapleader=" "
 
 " Builtin file menager
 nnoremap <leader>fv :Ex <cr>
-
-" Copy/paste with system clipboard
-nnoremap gy "+y
-nnoremap gp "+p
