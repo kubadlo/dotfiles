@@ -14,3 +14,6 @@ alias ll="ls -lhAG"
 
 # Store go modules in hidden folder
 export GOPATH="$HOME/.go"
+
+# Use JDK installed via homebrew as a default one
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
