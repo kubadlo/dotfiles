@@ -1,0 +1,19 @@
+{
+  "buffer_font_family": "Zed Mono",
+  "buffer_font_size": 14,
+  "ui_font_family": "Zed Sans",
+  "ui_font_size": 16,
+  "assistant": {
+    "version": "1",
+    "enabled": false
+  },
+  "project_panel": {
+    "default_width": 320
+  },
+  "collaboration_panel": {
+    "default_width": 320
+  },
+  "tabs": {
+    "git_status": true
+  }
+}
