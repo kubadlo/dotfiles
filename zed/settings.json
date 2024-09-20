@@ -1,17 +1,22 @@
 {
-  "buffer_font_family": "Zed Mono",
-  "buffer_font_size": 14,
-  "ui_font_family": "Zed Sans",
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 13,
+  "ui_font_family": ".SystemUIFont",
   "ui_font_size": 16,
-  "assistant": {
-    "version": "1",
-    "enabled": false
-  },
   "project_panel": {
+    "default_width": 320
+  },
+  "outline_panel": {
     "default_width": 320
   },
   "collaboration_panel": {
     "default_width": 320
+  },
+  "chat_panel": {
+    "default_width": 420
+  },
+  "notification_panel": {
+    "default_width": 420
   },
   "tabs": {
     "git_status": true
