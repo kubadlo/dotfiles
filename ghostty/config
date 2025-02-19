@@ -1,0 +1,5 @@
+font-family = JetBrains Mono Regular
+font-size   = 13
+
+macos-icon = xray
+theme      = Dracula+
