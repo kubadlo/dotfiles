@@ -5,13 +5,13 @@
   "ui_font_size": 16,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "One Dark"
+    "light": "Melange Light",
+    "dark": "Melange Dark"
   },
   "icon_theme": {
     "mode": "system",
-    "light": "Symbols",
-    "dark": "Symbols"
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)"
   },
   "vim_mode": true,
   "vim": {
