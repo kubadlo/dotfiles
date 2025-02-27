@@ -1,0 +1,16 @@
+[
+  {
+    "context": "VimControl",
+    "bindings": {
+      // Switch between tabs
+      "[ b": "pane::ActivatePrevItem",
+      "] b": "pane::ActivateNextItem",
+      // File manager
+      "space e": "pane::RevealInProjectPanel",
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space c f": "editor::Format"
+    }
+  }
+]
