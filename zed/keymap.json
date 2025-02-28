@@ -5,6 +5,9 @@
       // Switch between tabs
       "[ b": "pane::ActivatePrevItem",
       "] b": "pane::ActivateNextItem",
+      // Closing tabs
+      "space b d": "pane::CloseActiveItem",
+      "space b o": "pane::CloseInactiveItems",
       // File manager
       "space e": "pane::RevealInProjectPanel",
       // Code actions
