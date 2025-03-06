@@ -28,13 +28,16 @@
     }
   },
   "project_panel": {
-    "default_width": 320
+    "default_width": 360
+  },
+  "git_panel": {
+    "default_width": 360
   },
   "outline_panel": {
-    "default_width": 320
+    "default_width": 360
   },
   "collaboration_panel": {
-    "default_width": 320
+    "default_width": 360
   },
   "notification_panel": {
     "default_width": 420
