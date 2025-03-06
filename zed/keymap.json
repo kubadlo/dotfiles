@@ -3,7 +3,7 @@
     "context": "VimControl",
     "bindings": {
       // Switch between tabs
-      "[ b": "pane::ActivatePrevItem",
+      "[ b": "pane::ActivatePreviousItem",
       "] b": "pane::ActivateNextItem",
       // Closing tabs
       "space b d": "pane::CloseActiveItem",
