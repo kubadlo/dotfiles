@@ -5,6 +5,9 @@
       // Switch between tabs
       "[ b": "pane::ActivatePreviousItem",
       "] b": "pane::ActivateNextItem",
+      // Switch between code diagnostics
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] d": "editor::GoToDiagnostic",
       // Closing tabs
       "space b d": "pane::CloseActiveItem",
       "space b o": "pane::CloseInactiveItems",
