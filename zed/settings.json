@@ -15,7 +15,8 @@
   },
   "vim_mode": true,
   "vim": {
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "on_yank"
   },
   "features": {
     "edit_prediction_provider": "zed"
