@@ -3,45 +3,20 @@
   "buffer_font_size": 13,
   "ui_font_family": ".SystemUIFont",
   "ui_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Melange Light",
-    "dark": "Melange Dark"
-  },
-  "icon_theme": {
-    "mode": "system",
-    "light": "Zed (Default)",
-    "dark": "Zed (Default)"
-  },
-  "vim_mode": true,
-  "vim": {
-    "toggle_relative_line_numbers": true,
-    "use_system_clipboard": "on_yank"
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
-  "assistant": {
-    "version": "2",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
-    }
+  "edit_predictions": {
+    "mode": "subtle"
   },
   "project_panel": {
-    "default_width": 360
+    "default_width": 320
   },
   "git_panel": {
-    "default_width": 360
-  },
-  "outline_panel": {
-    "default_width": 360
+    "default_width": 320
   },
   "collaboration_panel": {
-    "default_width": 360
+    "default_width": 320
   },
-  "notification_panel": {
-    "default_width": 420
+  "outline_panel": {
+    "default_width": 320
   },
   "tabs": {
     "git_status": true
