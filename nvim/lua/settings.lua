@@ -46,3 +46,8 @@ vim.opt.confirm = true
 
 -- Hide mode since it's visible in statusbar
 vim.opt.showmode = false
+
+-- Show diagnostics inline
+vim.diagnostic.config({
+    virtual_text = true,
+})
