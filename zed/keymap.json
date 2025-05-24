@@ -1,0 +1,25 @@
+[
+  {
+    "context": "VimControl",
+    "bindings": {
+      // Switch between tabs
+      "[ b": "pane::ActivatePreviousItem",
+      "] b": "pane::ActivateNextItem",
+      // Switch between code diagnostics
+      "[ d": "editor::GoToPreviousDiagnostic",
+      "] d": "editor::GoToDiagnostic",
+      // Closing tabs
+      "space b d": "pane::CloseActiveItem",
+      "space b a": "pane::CloseAllItems",
+      "space b o": "pane::CloseInactiveItems",
+      "space b l": "pane::CloseItemsToTheLeft",
+      "space b r": "pane::CloseItemsToTheRight",
+      // File manager
+      "space e": "pane::RevealInProjectPanel",
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space c r": "editor::Rename",
+      "space c f": "editor::Format"
+    }
+  }
+]
