@@ -14,6 +14,7 @@ return {
         -- User interface
         require("mini.icons").setup()
         require("mini.statusline").setup()
+        require("mini.tabline").setup()
 
         -- Mock 'nvim-web-devicons' module
         MiniIcons.mock_nvim_web_devicons()
