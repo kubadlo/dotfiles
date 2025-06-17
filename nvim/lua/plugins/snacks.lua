@@ -14,6 +14,8 @@ return {
         { "<leader>ba",      function() Snacks.bufdelete.all() end,                desc = "Delete all buffers" },
         { "<leader>bo",      function() Snacks.bufdelete.other() end,              desc = "Delete other buffers" },
         -- Git
+        { "<leader>gg",      function() Snacks.lazygit.open() end,                 desc = "Open lazygit" },
+        { "<leader>go",      function() Snacks.gitbrowse.open() end,               desc = "Open the repo in the browser" },
         { "<leader>gb",      function() Snacks.picker.git_branches() end,          desc = "Git branches" },
         { "<leader>gd",      function() Snacks.picker.git_diff() end,              desc = "Git diff" },
         { "<leader>gl",      function() Snacks.picker.git_log() end,               desc = "Git log" },
@@ -43,10 +45,16 @@ return {
         explorer = {
             enabled = true,
         },
+        gitbrowse = {
+            enabled = true,
+        },
         indent = {
             enabled = true,
         },
         input = {
+            enabled = true,
+        },
+        lazygit = {
             enabled = true,
         },
         notifier = {
