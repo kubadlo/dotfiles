@@ -34,8 +34,8 @@ return {
         -- Search
         { "<leader>sb",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
         { "<leader>sB",      function() Snacks.picker.grep_buffers() end,          desc = "Open buffers" },
-        { "<leader>sB",      function() Snacks.picker.icons() end,                 desc = "Icons" },
-        { "<leader>sB",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
+        { "<leader>si",      function() Snacks.picker.icons() end,                 desc = "Icons" },
+        { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
     },
     opts = {
