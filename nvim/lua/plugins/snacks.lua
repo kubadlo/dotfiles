@@ -31,10 +31,13 @@ return {
         { "gy",              function() Snacks.picker.lsp_type_definitions() end,  desc = "Go to type definition" },
         { "<leader>cs",      function() Snacks.picker.lsp_symbols() end,           desc = "Document symbols" },
         { "<leader>cS",      function() Snacks.picker.lsp_workspace_symbols() end, desc = "Workspace symbols" },
+        -- Diagnostics
+        { "<leader>cd",      function() Snacks.picker.diagnostics_buffer() end,    desc = "Document diagnostics" },
+        { "<leader>cD",      function() Snacks.picker.diagnostics() end,           desc = "Workspace diagnostics" },
         -- Search
-        { "<leader>sb",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
-        { "<leader>sB",      function() Snacks.picker.grep_buffers() end,          desc = "Open buffers" },
+        { "<leader>sb",      function() Snacks.picker.grep_buffers() end,          desc = "Open buffers" },
         { "<leader>si",      function() Snacks.picker.icons() end,                 desc = "Icons" },
+        { "<leader>sl",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
     },
