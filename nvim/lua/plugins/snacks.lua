@@ -42,6 +42,7 @@ return {
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
     },
+    ---@type snacks.Config
     opts = {
         bufdelete = {
             enabled = true,

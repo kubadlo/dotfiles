@@ -1,5 +1,6 @@
 return {
     "stevearc/conform.nvim",
+    ---@type conform.setupOpts
     opts = {
         formatters = {
             biome = {
