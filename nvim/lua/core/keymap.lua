@@ -1,7 +1,7 @@
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
--- File managment
+-- File management
 vim.keymap.set("n", "<leader>fv", vim.cmd.Ex, { desc = "Netrw" })
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
@@ -36,5 +36,5 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
--- Quit neovim easily
+-- Quit Neovim easily
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })

@@ -8,7 +8,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
--- Set intendation based on file defaults
+-- Set indentation based on file defaults
 vim.opt.smartindent = true
 vim.opt.breakindent = true
 
@@ -31,16 +31,16 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
 
--- Show current file name in terminal title
+-- Show current filename in terminal title
 vim.opt.title = true
 
 -- Confirm changes before exiting modified buffer
 vim.opt.confirm = true
 
--- Hide mode since it's visible in statusbar
+-- Hide mode since it's visible in status bar
 vim.opt.showmode = false
 
--- Use one global status bar per nvim instance
+-- Use one global status bar per Neovim instance
 vim.opt.laststatus = 3
 
 -- Show diagnostics inline
