@@ -5,6 +5,7 @@ return {
     keys = {
         -- Find files
         { "<leader><space>", function() Snacks.picker.files() end,                 desc = "Find files" },
+        { "<leader><tab>",   function() Snacks.picker.resume() end,                desc = "Resume" },
         { "<leader>,",       function() Snacks.picker.buffers() end,               desc = "Buffers" },
         { "<leader>/",       function() Snacks.picker.grep() end,                  desc = "Grep" },
         -- File explorer
@@ -35,10 +36,9 @@ return {
         { "<leader>cd",      function() Snacks.picker.diagnostics_buffer() end,    desc = "Document diagnostics" },
         { "<leader>cD",      function() Snacks.picker.diagnostics() end,           desc = "Workspace diagnostics" },
         -- Search
-        { "<leader>sb",      function() Snacks.picker.grep_buffers() end,          desc = "Open buffers" },
+        { "<leader>sb",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
         { "<leader>si",      function() Snacks.picker.icons() end,                 desc = "Icons" },
         { "<leader>sj",      function() Snacks.picker.jumps() end,                 desc = "Jumps" },
-        { "<leader>sl",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
     },
@@ -67,6 +67,14 @@ return {
         },
         picker = {
             enabled = true,
+            sources = {
+                explorer = {
+                    layout = {
+                        preset = "default",
+                        preview = "file",
+                    },
+                },
+            },
         },
     },
 }
