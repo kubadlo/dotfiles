@@ -1,5 +1,3 @@
-local lsp = require('utils.lsp')
-
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
@@ -11,8 +9,8 @@ vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 vim.keymap.set("n", "gK", vim.diagnostic.open_float, { desc = "Diagnostics hover" })
 
 -- LSP
-vim.keymap.set("n", "<leader>ca", lsp.code_action, { desc = "Code actions" })
-vim.keymap.set("n", "<leader>cf", lsp.code_format, { desc = "Format" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- Copy/paste with system clipboard
