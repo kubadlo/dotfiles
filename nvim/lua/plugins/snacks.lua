@@ -16,7 +16,7 @@ return {
         { "<leader>bo",      function() Snacks.bufdelete.other() end,              desc = "Delete other buffers" },
         -- Git
         { "<leader>gg",      function() Snacks.lazygit.open() end,                 desc = "Open lazygit" },
-        { "<leader>go",      function() Snacks.gitbrowse.open() end,               desc = "Open the repo in the browser" },
+        { "<leader>go",      function() Snacks.gitbrowse.open() end,               desc = "Open in the browser" },
         { "<leader>gb",      function() Snacks.picker.git_branches() end,          desc = "Git branches" },
         { "<leader>gd",      function() Snacks.picker.git_diff() end,              desc = "Git diff" },
         { "<leader>gl",      function() Snacks.picker.git_log() end,               desc = "Git log" },
@@ -36,21 +36,20 @@ return {
         { "<leader>cd",      function() Snacks.picker.diagnostics_buffer() end,    desc = "Document diagnostics" },
         { "<leader>cD",      function() Snacks.picker.diagnostics() end,           desc = "Workspace diagnostics" },
         -- Search
-        { "<leader>sb",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
+        { "<leader>sl",      function() Snacks.picker.grep_buffers() end,          desc = "Buffers" },
+        { "<leader>sl",      function() Snacks.picker.lines() end,                 desc = "Buffer lines" },
         { "<leader>si",      function() Snacks.picker.icons() end,                 desc = "Icons" },
         { "<leader>sj",      function() Snacks.picker.jumps() end,                 desc = "Jumps" },
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
+        { "<leader>su",      function() Snacks.picker.undo() end,                  desc = "Undo history" },
+        --
+        { "<leader>xl",      function() Snacks.picker.loclist() end,               desc = "Location list" },
+        { "<leader>xq",      function() Snacks.picker.qflist() end,                desc = "Quickfix list" },
     },
     ---@type snacks.Config
     opts = {
-        bufdelete = {
-            enabled = true,
-        },
         explorer = {
-            enabled = true,
-        },
-        gitbrowse = {
             enabled = true,
         },
         indent = {
@@ -59,22 +58,20 @@ return {
         input = {
             enabled = true,
         },
-        lazygit = {
-            enabled = true,
-        },
         notifier = {
             enabled = true,
         },
         picker = {
             enabled = true,
-            sources = {
-                explorer = {
-                    layout = {
-                        preset = "default",
-                        preview = "file",
-                    },
-                },
-            },
+        },
+        quickfile = {
+            enabled = true,
+        },
+        scope = {
+            enabled = true,
+        },
+        scroll = {
+            enabled = true,
         },
     },
 }
