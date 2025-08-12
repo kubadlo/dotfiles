@@ -1,5 +1,6 @@
 return {
     "stevearc/conform.nvim",
+    event = "BufEnter",
     ---@type conform.setupOpts
     opts = {
         formatters = {

@@ -1,13 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = "BufEnter",
     ---@type TSConfig
+    ---@diagnostic disable-next-line: missing-fields
     opts = {
         auto_install = true,
-        sync_install = false,
-        ignore_install = {},
-        ensure_installed = {},
-        modules = {},
         highlight = {
             enable = true,
         },

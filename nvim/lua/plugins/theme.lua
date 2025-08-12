@@ -3,6 +3,7 @@ return {
     priority = 1000,
     lazy = false,
     ---@type tokyonight.Config
+    ---@diagnostic disable-next-line: missing-fields
     opts = {
         style = "moon",
         styles = {
@@ -11,8 +12,6 @@ return {
                 italic = false,
             },
         },
-        on_colors = function() end,
-        on_highlights = function() end,
     },
     ---@param opts tokyonight.Config
     config = function(_, opts)
