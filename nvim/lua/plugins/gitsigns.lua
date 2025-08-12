@@ -67,6 +67,16 @@ return {
                 })
             end
 
+            local function next_hunk()
+                ---@diagnostic disable-next-line: param-type-mismatch
+                gitsigns.nav_hunk('next')
+            end
+
+            local function prev_hunk()
+                ---@diagnostic disable-next-line: param-type-mismatch
+                gitsigns.nav_hunk('prev')
+            end
+
             local function visual_stage()
                 gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
             end
@@ -78,6 +88,10 @@ return {
             local function blame_line()
                 gitsigns.blame_line({ full = true })
             end
+
+            -- Navigate between hunks
+            map('n', ']h', next_hunk, "Next hunk")
+            map('n', '[h', prev_hunk, "Previous hunk")
 
             -- Hunk actions
             map('n', '<leader>hs', gitsigns.stage_hunk, "Stage hunk")
