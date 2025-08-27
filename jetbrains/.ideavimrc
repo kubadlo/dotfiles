@@ -1,0 +1,39 @@
+" Show line numbers relative to the cursor position
+set relativenumber
+
+" Show line numbers relative to the cursor position
+set number
+set relativenumber
+
+" Set case insensitive search
+set ignorecase
+set smartcase
+
+" Show search results while typing
+set incsearch
+
+" Start scrolling 5 lines before window edge
+set scrolloff=5
+set sidescrolloff=5
+
+" Perform join action by the IDE
+set ideajoin
+
+" Set leader key to space
+let mapleader=" "
+
+" Find files
+map <leader><space> <Action>(GotoFile)
+map <leader>, <Action>(RecentFiles)
+map <leader>/ <Action>(FindInPath)
+
+" Buffers
+map <leader>bd <Action>(CloseContent)
+map <leader>ba <Action>(CloseAllEditors)
+map <leader>bo <Action>(CloseAllEditorsButActive)
+
+" LSP
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>cf <Action>(ReformatCode)
+map <leader>ci <Action>(OptimizeImports)
+map <leader>cr <Action>(RenameElement)
