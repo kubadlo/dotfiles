@@ -43,7 +43,7 @@ return {
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
         { "<leader>su",      function() Snacks.picker.undo() end,                  desc = "Undo history" },
-        --
+        -- Quick fix lists
         { "<leader>xl",      function() Snacks.picker.loclist() end,               desc = "Location list" },
         { "<leader>xq",      function() Snacks.picker.qflist() end,                desc = "Quickfix list" },
     },
@@ -63,14 +63,42 @@ return {
         },
         picker = {
             enabled = true,
+            sources = {
+                buffers = {
+                    layout = {
+                        preset = "ivy_split",
+                        ---@diagnostic disable-next-line: assign-type-mismatch
+                        preview = false,
+                    }
+                },
+                files   = {
+                    layout = {
+                        preset = "ivy_split",
+                        ---@diagnostic disable-next-line: assign-type-mismatch
+                        preview = false,
+                    }
+                },
+                grep    = {
+                    layout = {
+                        preset = "ivy_split"
+                    }
+                },
+                loclist = {
+                    layout = {
+                        preset = "ivy_split"
+                    }
+                },
+                qflist  = {
+                    layout = {
+                        preset = "ivy_split"
+                    }
+                },
+            },
         },
         quickfile = {
             enabled = true,
         },
         scope = {
-            enabled = true,
-        },
-        scroll = {
             enabled = true,
         },
     },
