@@ -64,25 +64,6 @@ return {
         picker = {
             enabled = true,
             sources = {
-                buffers = {
-                    layout = {
-                        preset = "ivy_split",
-                        ---@diagnostic disable-next-line: assign-type-mismatch
-                        preview = false,
-                    }
-                },
-                files   = {
-                    layout = {
-                        preset = "ivy_split",
-                        ---@diagnostic disable-next-line: assign-type-mismatch
-                        preview = false,
-                    }
-                },
-                grep    = {
-                    layout = {
-                        preset = "ivy_split"
-                    }
-                },
                 loclist = {
                     layout = {
                         preset = "ivy_split"
