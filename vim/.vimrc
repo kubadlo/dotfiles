@@ -29,6 +29,9 @@ set smartcase
 " Show search results while typing
 set incsearch
 
+" Disable word wrapping
+set nowrap
+
 " Start scrolling 5 lines before window edge
 set scrolloff=5
 set sidescrolloff=5
@@ -41,3 +44,4 @@ let mapleader=" "
 
 " Builtin file menager
 nnoremap <leader>fv :Ex <cr>
+
