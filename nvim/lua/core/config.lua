@@ -19,6 +19,9 @@ vim.opt.smartcase = true
 -- Show search results while typing
 vim.opt.incsearch = true
 
+-- Disable word wrapping
+vim.opt.wrap = false
+
 -- Show whitespace characters
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
