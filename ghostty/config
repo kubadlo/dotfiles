@@ -1,3 +1,4 @@
 font-family = JetBrains Mono
 font-size   = 13
-theme       = tokyonight_moon
+macos-icon  = chalkboard
+theme       = TokyoNight Moon
