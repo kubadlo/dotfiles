@@ -5,7 +5,6 @@ return {
     keys = {
         -- Find files
         { "<leader><space>", function() Snacks.picker.files() end,                 desc = "Find files" },
-        { "<leader><tab>",   function() Snacks.picker.resume() end,                desc = "Resume" },
         { "<leader>,",       function() Snacks.picker.buffers() end,               desc = "Buffers" },
         { "<leader>/",       function() Snacks.picker.grep() end,                  desc = "Grep" },
         -- File explorer
@@ -43,9 +42,6 @@ return {
         { "<leader>sk",      function() Snacks.picker.keymaps() end,               desc = "Keymaps" },
         { "<leader>sr",      function() Snacks.picker.registers() end,             desc = "Registers" },
         { "<leader>su",      function() Snacks.picker.undo() end,                  desc = "Undo history" },
-        -- Quick fix lists
-        { "<leader>xl",      function() Snacks.picker.loclist() end,               desc = "Location list" },
-        { "<leader>xq",      function() Snacks.picker.qflist() end,                desc = "Quickfix list" },
     },
     ---@type snacks.Config
     opts = {
@@ -63,18 +59,6 @@ return {
         },
         picker = {
             enabled = true,
-            sources = {
-                loclist = {
-                    layout = {
-                        preset = "ivy_split"
-                    }
-                },
-                qflist  = {
-                    layout = {
-                        preset = "ivy_split"
-                    }
-                },
-            },
         },
         quickfile = {
             enabled = true,
