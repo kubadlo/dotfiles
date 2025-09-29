@@ -26,7 +26,7 @@ return {
         -- LSP
         { "gd",              function() Snacks.picker.lsp_definitions() end,       desc = "Go to definition" },
         { "gD",              function() Snacks.picker.lsp_declarations() end,      desc = "Go to declaration" },
-        { "gr",              function() Snacks.picker.lsp_references() end,        desc = "References" },
+        { "gr",              function() Snacks.picker.lsp_references() end,        desc = "References",           nowait = true },
         { "gI",              function() Snacks.picker.lsp_implementations() end,   desc = "Go to implementation" },
         { "gy",              function() Snacks.picker.lsp_type_definitions() end,  desc = "Go to type definition" },
         { "<leader>cs",      function() Snacks.picker.lsp_symbols() end,           desc = "Document symbols" },
