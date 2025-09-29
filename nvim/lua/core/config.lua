@@ -2,6 +2,9 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Highlight the current line
+vim.opt.cursorline = true
+
 -- Make <Tab> 4 spaces wide
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
