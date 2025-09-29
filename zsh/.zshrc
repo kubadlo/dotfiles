@@ -10,4 +10,3 @@ compctl -M "" "m:{a-zA-Z}={A-Za-z}"
 # Improve file listing
 alias ls="ls -lhG"
 alias ll="ls -lhAG"
-
