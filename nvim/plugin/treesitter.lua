@@ -20,5 +20,6 @@ require("nvim-treesitter").install({
     "json",
     "lua",
     "typescript",
+    "tsx",
     "yaml",
 })
