@@ -27,7 +27,7 @@ vim.opt.wrap = false
 
 -- Show whitespace characters
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Make splits more consistent
 vim.opt.splitbelow = true

@@ -1,8 +1,35 @@
-return {
-    "stevearc/conform.nvim",
-    event = "BufEnter",
-    ---@type conform.setupOpts
-    opts = {
+local add, later = MiniDeps.add, MiniDeps.later
+
+later(function()
+    add({
+        source = "neovim/nvim-lspconfig",
+        depends = {
+            "mason-org/mason.nvim",
+            "mason-org/mason-lspconfig.nvim",
+        },
+    })
+
+    require("mason").setup({
+        install_root_dir = vim.fn.stdpath("data") .. "/site/mason",
+    })
+
+    require("mason-lspconfig").setup({
+        ensure_installed = {
+            "harper_ls",
+            "lua_ls",
+        },
+    })
+end)
+
+later(function()
+    add({
+        source = "stevearc/conform.nvim",
+        depends = {
+            "neovim/nvim-lspconfig",
+        },
+    })
+
+    require("conform").setup({
         formatters = {
             biome = {
                 require_cwd = true,
@@ -35,5 +62,5 @@ return {
             timeout_ms = 500,
             lsp_format = "fallback",
         },
-    },
-}
+    })
+end)

@@ -1,32 +1,20 @@
-require("core.config")
-require("core.keymap")
-
 local data_path = vim.fn.stdpath("data")
 
-local lazy_path = data_path .. "/lazy/lazy.nvim"
-local lazy_repo = "https://github.com/folke/lazy.nvim.git"
+local mini_path = data_path .. "/site/pack/deps/start/mini.nvim"
+local mini_repo = "https://github.com/nvim-mini/mini.nvim"
 
--- Install lazy.nvim if it's not already installed
-if not (vim.uv or vim.loop).fs_stat(lazy_path) then
+if not vim.loop.fs_stat(mini_path) then
+    vim.cmd("echo 'Installing `mini.nvim`' | redraw")
     vim.fn.system({
         "git",
         "clone",
         "--filter=blob:none",
-        "--branch=stable",
-        lazy_repo,
-        lazy_path,
+        mini_repo,
+        mini_path,
     })
 
-    if vim.v.shell_error ~= 0 then
-        vim.cmd("echo 'Failed to install lazy.nvim! Press any key to exit...' | redraw")
-        vim.fn.getchar()
-
-        os.exit(1)
-    end
+    vim.cmd("packadd mini.nvim | helptags ALL")
+    vim.cmd("echo 'Installed `mini.nvim`' | redraw")
 end
 
--- Add lazy.nvim to the runtime path
-vim.opt.rtp:prepend(lazy_path)
-
--- Install and configure plugins
-require("lazy").setup("plugins")
+require("mini.deps").setup()
