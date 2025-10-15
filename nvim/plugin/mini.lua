@@ -1,17 +1,5 @@
 local now, later = MiniDeps.now, MiniDeps.later
 
-now(function()
-    require("mini.basics").setup({
-        options = {
-            extra_ui = true,
-        },
-        mappings = {
-            windows = true,
-            move_with_alt = true,
-        },
-    })
-end)
-
 -- Appearance
 now(function() require("mini.statusline").setup() end)
 now(function()

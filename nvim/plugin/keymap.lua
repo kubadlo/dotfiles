@@ -76,10 +76,21 @@ vim.keymap.set("n", "<leader>st", "<cmd>Pick hipatterns<cr>", { desc = "Todos" }
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
+-- Copy/paste with system clipboard
+vim.keymap.set({ "n", "x" }, "gy", "\"+y", { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "gp", "\"+p", { desc = "Paste from system clipboard" })
+vim.keymap.set("x", "gp", "\"+P", { desc = "Paste from system clipboard" })
+
+-- Window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus left window", remap = true })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus below window", remap = true })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Focus above window", remap = true })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Focus right window", remap = true })
+
 -- Tab management
-vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
-vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
-vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close Other Tabs" })
+vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
+vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close tab" })
+vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
 
 -- Session management
 vim.keymap.set("n", "<leader>qs", function() MiniSessions.select() end, { desc = "Select session" })

@@ -22,6 +22,9 @@ vim.opt.smartcase = true
 -- Show search results while typing
 vim.opt.incsearch = true
 
+-- Enable persistent undo
+vim.opt.undofile = true
+
 -- Disable word wrapping
 vim.opt.wrap = false
 
