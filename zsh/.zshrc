@@ -4,8 +4,14 @@ eval "$(starship init zsh)"
 # Load Node.js version manager
 eval "$(nodenv init - zsh)"
 
+# Load completion system
+autoload -Uz compinit && compinit
+
 # Ignore case for autocomplete
-compctl -M "" "m:{a-zA-Z}={A-Za-z}"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# Enable vi keybindings
+bindkey -v
 
 # Improve file listing
 alias ls="ls -lhG"
