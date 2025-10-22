@@ -2,31 +2,12 @@
   {
     "context": "VimControl",
     "bindings": {
-      // Find files
-      "space space": "file_finder::Toggle",
-      // File explorer
+      // Manage files
       "space e": "pane::RevealInProjectPanel",
-      // Buffers
-      "space b d": "pane::CloseActiveItem",
-      "space b a": "pane::CloseAllItems",
-      "space b o": "pane::CloseOtherItems",
-      "space b l": "pane::CloseItemsToTheLeft",
-      "space b r": "pane::CloseItemsToTheRight",
-      // LSP
-      "space c a": "editor::ToggleCodeActions",
-      "space c r": "editor::Rename",
-      "space c f": "editor::Format",
+      "space f": "file_finder::Toggle",
       // Move lines up/down using the <alt> jk keys
       "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp",
-      // Move to window using the <ctrl> hjkl keys
-      "ctrl-w h": "workspace::ActivatePaneLeft",
-      "ctrl-w j": "workspace::ActivatePaneDown",
-      "ctrl-w k": "workspace::ActivatePaneUp",
-      "ctrl-w l": "workspace::ActivatePaneRight",
-      // Split windows in vim fashion
-      "ctrl-w v": "pane::SplitRight",
-      "ctrl-w s": "pane::SplitDown"
+      "alt-k": "editor::MoveLineUp"
     }
   }
 ]
