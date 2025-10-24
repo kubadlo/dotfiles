@@ -9,5 +9,11 @@
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-g": ["task::Spawn", { "task_name": "lazygit" }]
+    }
   }
 ]
