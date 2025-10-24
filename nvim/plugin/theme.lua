@@ -14,6 +14,7 @@ now(function()
         styles = {
             conditionals = {},
             keywords = { "bold" },
+            miscs = {},
         },
     })
 

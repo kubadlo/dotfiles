@@ -65,8 +65,3 @@ later(function() require("mini.move").setup() end)
 later(function() require("mini.pairs").setup() end)
 later(function() require("mini.splitjoin").setup() end)
 later(function() require("mini.surround").setup() end)
-later(function()
-    require("mini.completion").setup({
-        fallback_action = function() end,
-    })
-end)

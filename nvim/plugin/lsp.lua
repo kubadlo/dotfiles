@@ -23,6 +23,28 @@ end)
 
 later(function()
     add({
+        source = "saghen/blink.cmp",
+        checkout = "v1.7.0",
+        monitor = "main",
+        depends = {
+            "neovim/nvim-lspconfig",
+        },
+    })
+
+    require("blink.cmp").setup({
+        completion = {
+            ghost_text = {
+                enabled = true,
+            },
+        },
+        keymap = {
+            preset = "enter",
+        },
+    })
+end)
+
+later(function()
+    add({
         source = "stevearc/conform.nvim",
         depends = {
             "neovim/nvim-lspconfig",
