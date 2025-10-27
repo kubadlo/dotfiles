@@ -2,6 +2,7 @@ local now, later = MiniDeps.now, MiniDeps.later
 
 -- Appearance
 now(function() require("mini.statusline").setup() end)
+now(function() require("mini.tabline").setup() end)
 now(function()
     require("mini.icons").setup()
 
@@ -54,8 +55,19 @@ later(function()
 end)
 
 -- Git integration
-later(function() require("mini.diff").setup() end)
 later(function() require("mini.git").setup() end)
+later(function()
+    require("mini.diff").setup({
+        view = {
+            style = "sign",
+            signs = {
+                add = "▎",
+                change = "▎",
+                delete = "",
+            },
+        },
+    })
+end)
 
 -- Text editing
 later(function() require("mini.ai").setup() end)

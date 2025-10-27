@@ -1,5 +1,5 @@
 --- Open file explorer at current working directory
-local function explore_at_path() MiniFiles.open() end
+local function explore_at_root() MiniFiles.open() end
 
 --- Open file explorer at current buffer path
 local function explore_at_file() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end
@@ -29,17 +29,27 @@ local function buffer_delete_other()
     end
 end
 
+--- Select a previously started session
+local function session_select()
+    MiniSessions.select()
+end
+
+--- Write a new session
+local function session_write()
+    MiniSessions.write(vim.fn.input("Session name: "))
+end
+
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
 -- File management
-vim.keymap.set("n", "<leader>ed", explore_at_path, { desc = "Directory" })
-vim.keymap.set("n", "<leader>ef", explore_at_file, { desc = "File directory" })
+vim.keymap.set("n", "<leader>e", explore_at_file, { desc = "File directory" })
+vim.keymap.set("n", "<leader>E", explore_at_root, { desc = "Root directory" })
 
 -- Find files
-vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<cr>", { desc = "Files" })
-vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<cr>", { desc = "Buffers" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep_live<cr>", { desc = "Grep" })
+vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Files" })
+vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Buffers" })
+vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep" })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bd", buffer_delete, { desc = "Delete buffer" })
@@ -93,6 +103,6 @@ vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close tab" 
 vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
 
 -- Session management
-vim.keymap.set("n", "<leader>qs", function() MiniSessions.select() end, { desc = "Select session" })
-vim.keymap.set("n", "<leader>qw", function() MiniSessions.write() end, { desc = "Write session" })
+vim.keymap.set("n", "<leader>qs", session_select, { desc = "Select session" })
+vim.keymap.set("n", "<leader>qw", session_write, { desc = "Write session" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
