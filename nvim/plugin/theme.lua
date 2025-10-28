@@ -6,6 +6,7 @@ now(function()
     require("tokyonight").setup({
         style = "moon",
         styles = {
+            floats = "normal",
             keywords = {
                 bold = true,
                 italic = false,
