@@ -1,19 +1,12 @@
 local now, later = MiniDeps.now, MiniDeps.later
 
 -- Appearance
+now(function() require("mini.icons").setup() end)
 now(function() require("mini.statusline").setup() end)
-
 now(function()
     require("mini.tabline").setup({
         tabpage_section = "right",
     })
-end)
-
-now(function()
-    require("mini.icons").setup()
-
-    -- Mock "nvim-web-devicons" module
-    MiniIcons.mock_nvim_web_devicons()
 end)
 
 -- Sessions
@@ -32,7 +25,6 @@ end)
 
 -- General workflow
 later(function() require("mini.bufremove").setup() end)
-later(function() require("mini.jump").setup() end)
 later(function()
     local hipatterns = require("mini.hipatterns")
     hipatterns.setup({
@@ -83,3 +75,7 @@ later(function() require("mini.move").setup() end)
 later(function() require("mini.pairs").setup() end)
 later(function() require("mini.splitjoin").setup() end)
 later(function() require("mini.surround").setup() end)
+
+-- Text navigation
+later(function() require("mini.jump").setup() end)
+later(function() require("mini.jump2d").setup() end)
