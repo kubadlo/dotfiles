@@ -66,7 +66,7 @@ vim.keymap.set("n", "gd", "<cmd>Pick lsp scope='definition'<cr>", { desc = "Go t
 vim.keymap.set("n", "gD", "<cmd>Pick lsp scope='declaration'<cr>", { desc = "Go to declaration" })
 vim.keymap.set("n", "gr", "<cmd>Pick lsp scope='references'<cr>", { desc = "References", nowait = true })
 vim.keymap.set("n", "gi", "<cmd>Pick lsp scope='implementation'<cr>", { desc = "Go to implementation" })
-vim.keymap.set("n", "gy", "<cmd>Pick lsp scope='type_definition'<cr>", { desc = "Go to type definition" })
+vim.keymap.set("n", "gt", "<cmd>Pick lsp scope='type_definition'<cr>", { desc = "Go to type definition" })
 vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>", { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>cS", "<cmd>Pick lsp scope='workspace_symbol'<cr>", { desc = "Workspace symbols" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
