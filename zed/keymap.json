@@ -2,9 +2,6 @@
   {
     "context": "VimControl",
     "bindings": {
-      // Manage files
-      "space e": "pane::RevealInProjectPanel",
-      "space f": "file_finder::Toggle",
       // Move lines up/down using the <alt> jk keys
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp"
@@ -13,7 +10,8 @@
   {
     "context": "Workspace",
     "bindings": {
-      "alt-g": ["task::Spawn", { "task_name": "lazygit" }]
+      "alt-g": ["task::Spawn", { "task_name": "lazygit" }],
+      "alt-f": ["task::Spawn", { "task_name": "lazygit file" }]
     }
   }
 ]

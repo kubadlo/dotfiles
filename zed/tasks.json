@@ -1,9 +1,15 @@
 [
   {
     "label": "lazygit",
-    "command": "lazygit",
+    "command": "EDITOR=zed lazygit",
     "reveal_target": "center",
-    "use_new_terminal": true,
+    "hide": "on_success"
+  },
+  {
+    "label": "lazygit file",
+    "command": "EDITOR=zed lazygit",
+    "args": ["-f", "$ZED_RELATIVE_FILE"],
+    "reveal_target": "center",
     "hide": "on_success"
   }
 ]
