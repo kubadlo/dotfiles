@@ -3,5 +3,11 @@ font-size   = 13
 macos-icon  = xray
 theme       = TokyoNight Moon
 
+# Remove notification badge from the dock icon
+bell-features = title,no-attention
+
+# Do not dim inactive splits
 unfocused-split-opacity = 1
+
+# Balance padding on window edges
 window-padding-balance  = true
