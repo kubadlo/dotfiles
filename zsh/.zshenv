@@ -1,2 +1,2 @@
 # The obvious choice
-export EDITOR="nvim"
+export EDITOR="vim"

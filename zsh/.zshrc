@@ -1,9 +1,6 @@
 # Use Starship as a default prompt
 eval "$(starship init zsh)"
 
-# Load Node.js version manager
-eval "$(nodenv init - zsh)"
-
 # Load completion system
 autoload -Uz compinit && compinit
 
