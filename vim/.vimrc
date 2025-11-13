@@ -43,9 +43,6 @@ set title
 " Confirm changes before exiting modified buffer
 set confirm
 
-" Use one global status bar per Neovim instance
-set laststatus=3
-
 " Set leader key to space
 let mapleader=" "
 
