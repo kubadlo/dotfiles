@@ -40,17 +40,20 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 5
 vim.opt.sidescrolloff = 5
 
--- Show current filename in terminal title
-vim.opt.title = true
-
--- Confirm changes before exiting modified buffer
-vim.opt.confirm = true
+-- Always show signcolumn (less flicker)
+vim.opt.signcolumn = "yes"
 
 -- Hide mode since it's visible in status bar
 vim.opt.showmode = false
 
 -- Use one global status bar per Neovim instance
 vim.opt.laststatus = 3
+
+-- Show current filename in terminal title
+vim.opt.title = true
+
+-- Confirm changes before exiting modified buffer
+vim.opt.confirm = true
 
 -- Show diagnostics inline
 vim.diagnostic.config({
