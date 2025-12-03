@@ -1,17 +1,55 @@
-local add, later = MiniDeps.add, MiniDeps.later
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-later(function()
+now(function()
     add({
-        source = "neovim/nvim-lspconfig",
-        depends = {
-            "mason-org/mason.nvim",
-            "mason-org/mason-lspconfig.nvim",
+        source = "nvim-treesitter/nvim-treesitter",
+        checkout = "main",
+        hooks = {
+            post_checkout = function() vim.cmd("TSUpdate") end,
         },
     })
+
+    require("nvim-treesitter").setup({
+        install_dir = vim.fn.stdpath("data") .. "/site/treesitter",
+    })
+
+    require("nvim-treesitter").install({
+        "astro",
+        "css",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "typescript",
+        "tsx",
+        "yaml",
+    })
+
+    vim.api.nvim_create_autocmd("FileType", {
+        desc = "Enable treesitter",
+        callback = function()
+            if pcall(vim.treesitter.start) then
+                vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+            end
+        end
+    })
+end)
+
+later(function()
+    add({ source = "neovim/nvim-lspconfig" })
+end)
+
+later(function()
+    add({ source = "mason-org/mason.nvim" })
 
     require("mason").setup({
         install_root_dir = vim.fn.stdpath("data") .. "/site/mason",
     })
+end)
+
+later(function()
+    add({ source = "mason-org/mason-lspconfig.nvim" })
 
     require("mason-lspconfig").setup({
         ensure_installed = {
@@ -26,9 +64,6 @@ later(function()
         source = "saghen/blink.cmp",
         checkout = "v1.7.0",
         monitor = "main",
-        depends = {
-            "neovim/nvim-lspconfig",
-        },
     })
 
     require("blink.cmp").setup({
@@ -44,12 +79,7 @@ later(function()
 end)
 
 later(function()
-    add({
-        source = "stevearc/conform.nvim",
-        depends = {
-            "neovim/nvim-lspconfig",
-        },
-    })
+    add({ source = "stevearc/conform.nvim" })
 
     require("conform").setup({
         formatters = {

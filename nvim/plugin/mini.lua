@@ -1,28 +1,31 @@
 local now, later = MiniDeps.now, MiniDeps.later
 
-now(function()
-    -- Appearance
-    require("mini.icons").setup()
-    require("mini.statusline").setup()
-    require("mini.tabline").setup()
+-- User interface
+now(function() require("mini.icons").setup() end)
+now(function() require("mini.statusline").setup() end)
+now(function() require("mini.tabline").setup() end)
 
-    -- Sessions
-    require("mini.sessions").setup()
-    require("mini.starter").setup()
-end)
+-- Session management
+now(function() require("mini.sessions").setup() end)
+now(function() require("mini.starter").setup() end)
 
+-- File management
+later(function() require("mini.extra").setup() end)
+later(function() require("mini.files").setup() end)
 later(function()
-    -- File management
-    require("mini.extra").setup()
-    require("mini.files").setup()
     require("mini.pick").setup()
 
-    -- General workflow
-    require("mini.bracketed").setup()
-    require("mini.bufremove").setup()
+    -- Replace default select UI
+    vim.ui.select = MiniPick.ui_select
+end)
 
-    -- Git integration
-    require("mini.git").setup()
+-- General workflow
+later(function() require("mini.bracketed").setup() end)
+later(function() require("mini.bufremove").setup() end)
+
+-- Git integration
+later(function() require("mini.git").setup() end)
+later(function()
     require("mini.diff").setup({
         view = {
             style = "sign",
@@ -33,20 +36,23 @@ later(function()
             },
         },
     })
+end)
 
-    -- Text editing
-    require("mini.ai").setup()
-    require("mini.align").setup()
-    require("mini.comment").setup()
-    require("mini.move").setup()
-    require("mini.pairs").setup()
-    require("mini.splitjoin").setup()
-    require("mini.surround").setup()
 
-    -- Text navigation
-    require("mini.jump").setup()
-    require("mini.jump2d").setup()
+-- Text editing
+later(function() require("mini.ai").setup() end)
+later(function() require("mini.align").setup() end)
+later(function() require("mini.comment").setup() end)
+later(function() require("mini.move").setup() end)
+later(function() require("mini.pairs").setup() end)
+later(function() require("mini.splitjoin").setup() end)
+later(function() require("mini.surround").setup() end)
 
+-- Text navigation
+later(function() require("mini.jump").setup() end)
+later(function() require("mini.jump2d").setup() end)
+
+later(function()
     local clue = require("mini.clue")
     clue.setup({
         triggers = {
@@ -98,7 +104,9 @@ later(function()
             delay = 250,
         },
     })
+end)
 
+later(function ()
     local hipatterns = require("mini.hipatterns")
     hipatterns.setup({
         highlighters = {
@@ -123,7 +131,4 @@ later(function()
             hex_color = hipatterns.gen_highlighter.hex_color(),
         },
     })
-
-    -- Replace default select UI
-    vim.ui.select = MiniPick.ui_select
 end)

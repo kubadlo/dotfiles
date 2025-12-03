@@ -4,7 +4,6 @@ now(function()
     add({ source = "folke/tokyonight.nvim" })
 
     require("tokyonight").setup({
-        style = "moon",
         styles = {
             floats = "normal",
             keywords = {
