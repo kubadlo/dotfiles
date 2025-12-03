@@ -13,7 +13,9 @@ end
 local function buffer_delete_all()
     local buffers = vim.api.nvim_list_bufs()
     for _, buf_id in ipairs(buffers) do
-        MiniBufremove.delete(buf_id)
+        if vim.api.nvim_buf_is_loaded(buf_id) then
+            MiniBufremove.delete(buf_id)
+        end
     end
 end
 
@@ -22,9 +24,9 @@ local function buffer_delete_other()
     local current = vim.api.nvim_get_current_buf()
     local buffers = vim.api.nvim_list_bufs()
 
-    for _, buff_id in ipairs(buffers) do
-        if buff_id ~= current then
-            MiniBufremove.delete(buff_id)
+    for _, buf_id in ipairs(buffers) do
+        if vim.api.nvim_buf_is_loaded(buf_id) and buf_id ~= current then
+            MiniBufremove.delete(buf_id)
         end
     end
 end
