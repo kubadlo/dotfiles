@@ -3,19 +3,17 @@
   "buffer_font_size": 13,
   "ui_font_family": ".SystemUIFont",
   "ui_font_size": 16,
-  "theme": {
-    "mode": "dark",
-    "dark": "Catppuccin Macchiato",
-    "light": "Catppuccin Latte"
-  },
-  "icon_theme": {
-    "mode": "dark",
-    "dark": "Catppuccin Macchiato",
-    "light": "Catppuccin Latte"
-  },
   "vim_mode": true,
   "vim": {
-    "toggle_relative_line_numbers": true
+    "toggle_relative_line_numbers": true,
+    "use_system_clipboard": "on_yank"
+  },
+  "lsp": {
+    "biome": {
+      "settings": {
+        "require_config_file": true
+      }
+    }
   },
   "edit_predictions": {
     "mode": "subtle"

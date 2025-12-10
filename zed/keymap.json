@@ -2,6 +2,12 @@
   {
     "context": "VimControl",
     "bindings": {
+      // Manage buffers
+      "space b a": "pane::CloseAllItems",
+      "space b d": "pane::CloseActiveItem",
+      "space b l": "pane::CloseItemsToTheLeft",
+      "space b r": "pane::CloseItemsToTheRight",
+      "space b o": "pane::CloseOtherItems",
       // Move lines up/down using the <alt> jk keys
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp"
