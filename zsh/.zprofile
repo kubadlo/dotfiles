@@ -1,11 +1,11 @@
-# Load Brew environemnt
+# Homebrew package manager
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Load Node.js version manager
+# Node.js version manager
 eval "$(nodenv init - zsh)"
 
-# Load Cargo and Rust toolchain
-source $HOME/.cargo/env
+CARGO_BIN = "$HOME/.cargo/bin"
+LOCAL_BIN = "$HOME/.local/bin"
+JETBRAINS = "$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
-# Append JetBrains IDEs starting scripts to the PATH
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:$CARGO_BIN:$LOCAL_BIN:$JETBRAINS"
