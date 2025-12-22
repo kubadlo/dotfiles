@@ -42,7 +42,7 @@ end
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
--- Conflicting keymaps
+-- Remove conflicting keymaps
 vim.keymap.del("n", "gra")
 vim.keymap.del("n", "gri")
 vim.keymap.del("n", "grn")
@@ -95,9 +95,9 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Copy/paste with system clipboard
-vim.keymap.set({ "n", "x" }, "gy", "\"+y", { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "gp", "\"+p", { desc = "Paste from system clipboard" })
-vim.keymap.set("x", "gp", "\"+P", { desc = "Paste from system clipboard" })
+vim.keymap.set({ "n", "x" }, "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>p", "\"+p", { desc = "Paste from system clipboard" })
+vim.keymap.set("x", "<leader>p", "\"+P", { desc = "Paste from system clipboard" })
 
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus left window", remap = true })
