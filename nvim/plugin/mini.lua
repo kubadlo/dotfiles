@@ -2,6 +2,7 @@ local now, later = MiniDeps.now, MiniDeps.later
 
 -- User interface
 now(function() require("mini.icons").setup() end)
+now(function() require("mini.notify").setup() end)
 now(function() require("mini.statusline").setup() end)
 now(function() require("mini.tabline").setup() end)
 
@@ -90,6 +91,7 @@ later(function()
             { mode = "n", keys = "<leader><tab>", desc = "+Tabs" },
             { mode = "n", keys = "<leader>b",     desc = "+Buffers" },
             { mode = "n", keys = "<leader>c",     desc = "+Code" },
+            { mode = "n", keys = "<leader>g",     desc = "+Git" },
             { mode = "n", keys = "<leader>q",     desc = "+Sessions" },
             { mode = "n", keys = "<leader>s",     desc = "+Search" },
             clue.gen_clues.builtin_completion(),
@@ -106,7 +108,7 @@ later(function()
     })
 end)
 
-later(function ()
+later(function()
     local hipatterns = require("mini.hipatterns")
     hipatterns.setup({
         highlighters = {

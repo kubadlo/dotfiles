@@ -20,6 +20,7 @@ now(function()
         "javascript",
         "json",
         "lua",
+        "rust",
         "typescript",
         "tsx",
         "yaml",

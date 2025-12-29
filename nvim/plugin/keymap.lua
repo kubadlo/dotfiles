@@ -29,6 +29,16 @@ local function buffer_delete_other()
     end
 end
 
+--- Toggle diff overlay in the current buffer
+local function git_diff_toggle()
+    MiniDiff.toggle_overlay(vim.api.nvim_get_current_buf())
+end
+
+--- Show info about diff or commit under the cursor
+local function git_status_toggle()
+    MiniGit.show_at_cursor()
+end
+
 --- Select a previously started session
 local function session_select()
     MiniSessions.select()
@@ -38,6 +48,9 @@ end
 local function session_write()
     MiniSessions.write(vim.fn.input("Session name: "))
 end
+
+local git_log_cmd = [[Git log --pretty=format:\%h\ \%as\ │\ \%s --topo-order]]
+local git_log_buf = git_log_cmd .. " --follow -- %"
 
 -- Set <space> as a leader key
 vim.g.mapleader = " "
@@ -60,6 +73,7 @@ vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep" })
 
 -- Buffers
+vim.keymap.set("n", "<leader>bb", "<cmd>b#<cr>", { desc = "Toggle buffer" })
 vim.keymap.set("n", "<leader>bd", buffer_delete, { desc = "Delete buffer" })
 vim.keymap.set("n", "<leader>ba", buffer_delete_all, { desc = "Delete all buffers" })
 vim.keymap.set("n", "<leader>bo", buffer_delete_other, { desc = "Delete other buffers" })
@@ -81,6 +95,14 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 
+-- Git
+vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Diff" })
+vim.keymap.set("n", "<leader>gD", "<cmd>Git diff -- %<cr>", { desc = "Diff buffer" })
+vim.keymap.set("n", "<leader>gl", "<cmd>" .. git_log_cmd .. "<cr>", { desc = "Log" })
+vim.keymap.set("n", "<leader>gL", "<cmd>" .. git_log_buf .. "<cr>", { desc = "Log" })
+vim.keymap.set("n", "<leader>gt", git_diff_toggle, { desc = "Toggle diff overlay" })
+vim.keymap.set("n", "<leader>gs", git_status_toggle, { desc = "Show at cursor" })
+
 -- Search
 vim.keymap.set("n", "<leader>sc", "<cmd>Pick commands<cr>", { desc = "Commands" })
 vim.keymap.set("n", "<leader>sh", "<cmd>Pick help<cr>", { desc = "Help" })
@@ -95,9 +117,9 @@ vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
 -- Copy/paste with system clipboard
-vim.keymap.set({ "n", "x" }, "<leader>y", "\"+y", { desc = "Copy to system clipboard" })
-vim.keymap.set("n", "<leader>p", "\"+p", { desc = "Paste from system clipboard" })
-vim.keymap.set("x", "<leader>p", "\"+P", { desc = "Paste from system clipboard" })
+vim.keymap.set("x", "gy", "\"+y", { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "gp", "\"+p", { desc = "Paste from system clipboard" })
+vim.keymap.set("x", "gp", "\"+P", { desc = "Paste from system clipboard" })
 
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus left window", remap = true })
