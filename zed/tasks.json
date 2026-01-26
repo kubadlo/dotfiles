@@ -1,15 +1,15 @@
 [
   {
-    "label": "lazygit",
+    "label": "git status",
     "command": "EDITOR=zed lazygit",
     "reveal_target": "center",
-    "hide": "on_success"
+    "hide": "on_success",
   },
   {
-    "label": "lazygit file",
+    "label": "git history",
     "command": "EDITOR=zed lazygit",
     "args": ["-f", "$ZED_RELATIVE_FILE"],
     "reveal_target": "center",
-    "hide": "on_success"
-  }
+    "hide": "on_success",
+  },
 ]

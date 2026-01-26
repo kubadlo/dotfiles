@@ -10,14 +10,14 @@
       "space b o": "pane::CloseOtherItems",
       // Move lines up/down using the <alt> jk keys
       "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp"
-    }
+      "alt-k": "editor::MoveLineUp",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "alt-g": ["task::Spawn", { "task_name": "lazygit" }],
-      "alt-f": ["task::Spawn", { "task_name": "lazygit file" }]
-    }
-  }
+      "alt-g": ["task::Spawn", { "task_name": "git status" }],
+      "alt-f": ["task::Spawn", { "task_name": "git history" }],
+    },
+  },
 ]

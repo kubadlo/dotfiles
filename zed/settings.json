@@ -3,35 +3,50 @@
   "buffer_font_size": 13,
   "ui_font_family": ".SystemUIFont",
   "ui_font_size": 16,
+  "theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Frappé",
+  },
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
-    "use_system_clipboard": "on_yank"
+    "use_system_clipboard": "on_yank",
+  },
+  "which_key": {
+    "enabled": true,
+    "delay_ms": 250,
   },
   "lsp": {
     "biome": {
       "settings": {
-        "require_config_file": true
-      }
-    }
+        "require_config_file": true,
+      },
+    },
   },
   "edit_predictions": {
-    "mode": "subtle"
+    "mode": "subtle",
   },
   "project_panel": {
-    "default_width": 320
+    "default_width": 320,
   },
   "git_panel": {
-    "default_width": 320
+    "tree_view": true,
+    "default_width": 320,
   },
   "collaboration_panel": {
-    "default_width": 320
+    "default_width": 320,
   },
   "outline_panel": {
-    "default_width": 320
+    "default_width": 320,
   },
   "tabs": {
     "file_icons": true,
-    "git_status": true
-  }
+    "git_status": true,
+  },
 }
