@@ -22,15 +22,27 @@
     "enabled": true,
     "delay_ms": 250,
   },
-  "lsp": {
-    "biome": {
-      "settings": {
-        "require_config_file": true,
-      },
-    },
-  },
   "edit_predictions": {
     "mode": "subtle",
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "tsserver": {
+            "maxTsServerMemory": 8192,
+            "nodePath": "node",
+          },
+        },
+        "vtsls": {
+          "experimental": {
+            "completion": {
+              "enableServerSideFuzzyMatch": true,
+            },
+          },
+        },
+      },
+    },
   },
   "project_panel": {
     "default_width": 320,
