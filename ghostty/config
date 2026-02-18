@@ -1,7 +1,7 @@
 font-family = JetBrains Mono
 font-size   = 13
 macos-icon  = xray
-theme       = TokyoNight Moon
+theme       = Catppuccin Macchiato
 
 # Remove notification badge from the dock icon
 bell-features = title,no-attention
