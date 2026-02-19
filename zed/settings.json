@@ -13,6 +13,7 @@
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Frappé",
   },
+  "colorize_brackets": true,
   "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
