@@ -63,7 +63,7 @@ end)
 later(function()
     add({
         source = "saghen/blink.cmp",
-        checkout = "v1.7.0",
+        checkout = "v1.9.1",
         monitor = "main",
     })
 
