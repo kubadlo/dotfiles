@@ -98,8 +98,8 @@ vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 -- Git
 vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Diff" })
 vim.keymap.set("n", "<leader>gD", "<cmd>Git diff -- %<cr>", { desc = "Diff buffer" })
-vim.keymap.set("n", "<leader>gl", "<cmd>" .. git_log_cmd .. "<cr>", { desc = "Log" })
-vim.keymap.set("n", "<leader>gL", "<cmd>" .. git_log_buf .. "<cr>", { desc = "Log" })
+vim.keymap.set("n", "<leader>gl", "<cmd>" .. git_log_cmd .. "<cr>", { desc = "History" })
+vim.keymap.set("n", "<leader>gL", "<cmd>" .. git_log_buf .. "<cr>", { desc = "File history" })
 vim.keymap.set("n", "<leader>gt", git_diff_toggle, { desc = "Toggle diff overlay" })
 vim.keymap.set("n", "<leader>gs", git_status_toggle, { desc = "Show at cursor" })
 
