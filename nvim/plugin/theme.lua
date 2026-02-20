@@ -1,17 +1,23 @@
 local add, now = MiniDeps.add, MiniDeps.now
 
 now(function()
-    add({ source = "folke/tokyonight.nvim" })
+    add({
+        source = "catppuccin/nvim",
+        name = "catppuccin",
+    })
 
-    require("tokyonight").setup({
+    require("catppuccin").setup({
+        flavour = "macchiato",
+        float = {
+            transparent = true,
+            solid = false,
+        },
         styles = {
-            floats = "normal",
-            keywords = {
-                bold = true,
-                italic = false,
-            },
+            conditionals = {},
+            keywords = { "bold" },
+            misc = {},
         },
     })
 
-    vim.cmd("colorscheme tokyonight")
+    vim.cmd("colorscheme catppuccin")
 end)
