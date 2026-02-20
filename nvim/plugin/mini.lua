@@ -2,9 +2,7 @@ local now, later = MiniDeps.now, MiniDeps.later
 
 -- User interface
 now(function() require("mini.icons").setup() end)
-now(function() require("mini.notify").setup() end)
 now(function() require("mini.statusline").setup() end)
-now(function() require("mini.tabline").setup() end)
 
 -- Session management
 now(function() require("mini.sessions").setup() end)
