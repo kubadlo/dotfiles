@@ -72,6 +72,11 @@ later(function()
             ghost_text = {
                 enabled = true,
             },
+            list = {
+                selection = {
+                    preselect = false,
+                },
+            },
         },
         keymap = {
             preset = "enter",
