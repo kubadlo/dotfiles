@@ -30,7 +30,14 @@ now(function()
         desc = "Enable treesitter",
         callback = function()
             if pcall(vim.treesitter.start) then
+                -- Tree-sitter-based folding
                 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                vim.wo.foldmethod = 'expr'
+
+                -- Start with all folds open
+                vim.wo.foldlevel = 99
+
+                -- Tree-sitter-based indentation
                 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
             end
         end
