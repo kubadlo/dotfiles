@@ -43,6 +43,9 @@ vim.opt.sidescrolloff = 5
 -- Always show signcolumn (less flicker)
 vim.opt.signcolumn = "yes"
 
+-- Set rounder border for all floating windows
+vim.opt.winborder = "rounded"
+
 -- Hide mode since it's visible in status bar
 vim.opt.showmode = false
 
