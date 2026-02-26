@@ -84,6 +84,9 @@ later(function()
                     preselect = false,
                 },
             },
+            menu = {
+                border = "none",
+            },
         },
         keymap = {
             preset = "enter",
