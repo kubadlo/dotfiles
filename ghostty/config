@@ -1,7 +1,10 @@
 font-family = JetBrains Mono
 font-size   = 13
-macos-icon  = xray
 theme       = Catppuccin Macchiato
+
+# macOS specific configuration
+macos-icon          = xray
+macos-option-as-alt = true
 
 # Remove notification badge from the dock icon
 bell-features = title,no-attention
