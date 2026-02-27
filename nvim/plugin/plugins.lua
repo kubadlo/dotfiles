@@ -22,6 +22,7 @@ now(function()
         "lua",
         "rust",
         "typescript",
+        "toml",
         "tsx",
         "yaml",
     })
@@ -83,9 +84,6 @@ later(function()
                 selection = {
                     preselect = false,
                 },
-            },
-            menu = {
-                border = "none",
             },
         },
         keymap = {
