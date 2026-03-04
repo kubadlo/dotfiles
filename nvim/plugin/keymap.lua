@@ -49,6 +49,39 @@ local function session_write()
     MiniSessions.write(vim.fn.input("Session name: "))
 end
 
+-- Pick buffers with extra mappings
+local function pick_buffers()
+    MiniPick.builtin.buffers({}, {
+        mappings = {
+            delete_buffer = {
+                char = "<C-d>",
+                func = function()
+                    local matches = MiniPick.get_picker_matches()
+                    if not matches then
+                        return
+                    end
+
+                    local current = matches.current
+                    if not current then
+                        return
+                    end
+
+                    -- Delete the selected buffer
+                    vim.api.nvim_buf_delete(current.bufnr, { force = false })
+
+                    -- Filter out deleted buffer from the picker items
+                    local items = vim.tbl_filter(function(item)
+                        return vim.api.nvim_buf_is_valid(item.bufnr)
+                    end, MiniPick.get_picker_items() or {})
+
+                    -- Update picker list
+                    MiniPick.set_picker_items(items)
+                end,
+            }
+        }
+    })
+end
+
 local git_log_cmd = [[Git log --pretty=format:\%h\ \%as\ │\ \%s --topo-order]]
 local git_log_buf = git_log_cmd .. " --follow -- %"
 
@@ -69,7 +102,7 @@ vim.keymap.set("n", "<leader>E", explore_at_root, { desc = "Root directory" })
 
 -- Find files
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Files" })
-vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Buffers" })
+vim.keymap.set("n", "<leader>,", pick_buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Grep" })
 
 -- Buffers

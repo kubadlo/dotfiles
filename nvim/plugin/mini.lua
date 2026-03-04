@@ -10,21 +10,31 @@ now(function() require("mini.starter").setup() end)
 
 -- File management
 later(function() require("mini.extra").setup() end)
-later(function() require("mini.files").setup() end)
+later(function()
+    require("mini.files").setup({
+        windows = {
+            width_focus = 40,
+            width_nofocus = 40,
+        },
+    })
+end)
 later(function()
     require("mini.pick").setup({
         window = {
             config = function()
+                local height = math.floor(0.618 * vim.o.lines)
+                local width = math.floor(0.618 * vim.o.columns)
+
                 return {
-                    height = math.floor(0.35 * vim.o.lines),
-                    width = vim.o.columns,
+                    anchor = "NW",
+                    height = height,
+                    width = width,
+                    row = math.floor(0.5 * (vim.o.lines - height)),
+                    col = math.floor(0.5 * (vim.o.columns - width)),
                 }
             end,
         },
     })
-
-    -- Replace default select UI
-    vim.ui.select = MiniPick.ui_select
 end)
 
 -- General workflow
@@ -65,34 +75,34 @@ later(function()
     clue.setup({
         triggers = {
             -- Leader triggers
-            { mode = 'n', keys = '<leader>' },
-            { mode = 'x', keys = '<leader>' },
+            { mode = { 'n', 'x' }, keys = '<leader>' },
 
             -- Built-in completion
-            { mode = 'i', keys = '<C-x>' },
-
-            -- "g" key
-            { mode = 'n', keys = 'g' },
-            { mode = 'x', keys = 'g' },
-
-            -- Marks
-            { mode = 'n', keys = "'" },
-            { mode = 'n', keys = '`' },
-            { mode = 'x', keys = "'" },
-            { mode = 'x', keys = '`' },
-
-            -- Registers
-            { mode = 'n', keys = '"' },
-            { mode = 'x', keys = '"' },
-            { mode = 'i', keys = '<C-r>' },
-            { mode = 'c', keys = '<C-r>' },
+            { mode = 'i',          keys = '<C-x>' },
 
             -- Window commands
-            { mode = 'n', keys = '<C-w>' },
+            { mode = 'n',          keys = '<C-w>' },
+
+            -- Square brackets
+            { mode = { 'n', 'x' }, keys = '[' },
+            { mode = { 'n', 'x' }, keys = ']' },
+
+            -- Marks
+            { mode = { 'n', 'x' }, keys = "'" },
+            { mode = { 'n', 'x' }, keys = '`' },
+
+            -- Registers
+            { mode = { 'n', 'x' }, keys = '"' },
+            { mode = { 'i', 'c' }, keys = '<C-r>' },
+
+            -- Surround
+            { mode = { 'n', 'x' }, keys = 's' },
+
+            -- "g" key
+            { mode = { 'n', 'x' }, keys = 'g' },
 
             -- "z" key
-            { mode = 'n', keys = 'z' },
-            { mode = 'x', keys = 'z' },
+            { mode = { 'n', 'x' }, keys = 'z' },
         },
         clues = {
             { mode = "n", keys = "<leader><tab>", desc = "+Tabs" },
@@ -140,4 +150,15 @@ later(function()
             hex_color = hipatterns.gen_highlighter.hex_color(),
         },
     })
+end)
+
+later(function()
+    -- Mock icons for plugins that does not support mini.icons
+    MiniIcons.mock_nvim_web_devicons()
+
+    -- Add icons for LSP types
+    MiniIcons.tweak_lsp_kind()
+
+    -- Replace default select UI
+    vim.ui.select = MiniPick.ui_select
 end)
