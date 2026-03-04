@@ -75,34 +75,34 @@ later(function()
     clue.setup({
         triggers = {
             -- Leader triggers
-            { mode = { 'n', 'x' }, keys = '<leader>' },
+            { mode = { "n", "x" }, keys = "<leader>" },
 
             -- Built-in completion
-            { mode = 'i',          keys = '<C-x>' },
+            { mode = "i",          keys = "<C-x>" },
 
             -- Window commands
-            { mode = 'n',          keys = '<C-w>' },
+            { mode = "n",          keys = "<C-w>" },
 
             -- Square brackets
-            { mode = { 'n', 'x' }, keys = '[' },
-            { mode = { 'n', 'x' }, keys = ']' },
+            { mode = { "n", "x" }, keys = "[" },
+            { mode = { "n", "x" }, keys = "]" },
 
             -- Marks
-            { mode = { 'n', 'x' }, keys = "'" },
-            { mode = { 'n', 'x' }, keys = '`' },
+            { mode = { "n", "x" }, keys = "'" },
+            { mode = { "n", "x" }, keys = "`" },
 
             -- Registers
-            { mode = { 'n', 'x' }, keys = '"' },
-            { mode = { 'i', 'c' }, keys = '<C-r>' },
+            { mode = { "n", "x" }, keys = '"' },
+            { mode = { "i", "c" }, keys = "<C-r>" },
 
             -- Surround
-            { mode = { 'n', 'x' }, keys = 's' },
+            { mode = { "n", "x" }, keys = "s" },
 
             -- "g" key
-            { mode = { 'n', 'x' }, keys = 'g' },
+            { mode = { "n", "x" }, keys = "g" },
 
             -- "z" key
-            { mode = { 'n', 'x' }, keys = 'z' },
+            { mode = { "n", "x" }, keys = "z" },
         },
         clues = {
             { mode = "n", keys = "<leader><tab>", desc = "+Tabs" },
