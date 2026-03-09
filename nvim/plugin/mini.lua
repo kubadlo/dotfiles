@@ -18,6 +18,7 @@ later(function()
         },
     })
 end)
+
 later(function()
     require("mini.pick").setup({
         window = {
@@ -55,7 +56,6 @@ later(function()
         },
     })
 end)
-
 
 -- Text editing
 later(function() require("mini.ai").setup() end)

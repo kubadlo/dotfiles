@@ -49,6 +49,10 @@ local function session_write()
     MiniSessions.write(vim.fn.input("Session name: "))
 end
 
+local function session_delete()
+    MiniSessions.select("delete")
+end
+
 -- Pick buffers with extra mappings
 local function pick_buffers()
     MiniPick.builtin.buffers({}, {
@@ -117,6 +121,7 @@ vim.keymap.set("n", "<leader>cd", "<cmd>Pick diagnostic scope='current'<cr>", { 
 vim.keymap.set("n", "<leader>cD", "<cmd>Pick diagnostic scope='all'<cr>", { desc = "Workspace diagnostics" })
 
 -- LSP
+vim.keymap.set("n", "g.", vim.lsp.buf.code_action, { desc = "Code actions" })
 vim.keymap.set("n", "gd", "<cmd>Pick lsp scope='definition'<cr>", { desc = "Go to definition" })
 vim.keymap.set("n", "gD", "<cmd>Pick lsp scope='declaration'<cr>", { desc = "Go to declaration" })
 vim.keymap.set("n", "gr", "<cmd>Pick lsp scope='references'<cr>", { desc = "References" })
@@ -124,7 +129,6 @@ vim.keymap.set("n", "gI", "<cmd>Pick lsp scope='implementation'<cr>", { desc = "
 vim.keymap.set("n", "gy", "<cmd>Pick lsp scope='type_definition'<cr>", { desc = "Go to type definition" })
 vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>", { desc = "Document symbols" })
 vim.keymap.set("n", "<leader>cS", "<cmd>Pick lsp scope='workspace_symbol'<cr>", { desc = "Workspace symbols" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 
@@ -154,6 +158,20 @@ vim.keymap.set("x", "gy", "\"+y", { desc = "Copy to system clipboard" })
 vim.keymap.set("n", "gp", "\"+p", { desc = "Paste from system clipboard" })
 vim.keymap.set("x", "gp", "\"+P", { desc = "Paste from system clipboard" })
 
+-- Cursor navigation
+vim.keymap.set("c", "<M-h>", "<Left>", { silent = false, desc = "Left" })
+vim.keymap.set("c", "<M-l>", "<Right>", { silent = false, desc = "Right" })
+
+vim.keymap.set("i", "<M-h>", "<Left>", { noremap = false, desc = "Left" })
+vim.keymap.set("i", "<M-j>", "<Down>", { noremap = false, desc = "Down" })
+vim.keymap.set("i", "<M-k>", "<Up>", { noremap = false, desc = "Up" })
+vim.keymap.set("i", "<M-l>", "<Right>", { noremap = false, desc = "Right" })
+
+vim.keymap.set("t", "<M-h>", "<Left>", { desc = "Left" })
+vim.keymap.set("t", "<M-j>", "<Down>", { desc = "Down" })
+vim.keymap.set("t", "<M-k>", "<Up>", { desc = "Up" })
+vim.keymap.set("t", "<M-l>", "<Right>", { desc = "Right" })
+
 -- Window navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Focus left window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Focus below window", remap = true })
@@ -168,4 +186,5 @@ vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other 
 -- Session management
 vim.keymap.set("n", "<leader>qs", session_select, { desc = "Select session" })
 vim.keymap.set("n", "<leader>qw", session_write, { desc = "Write session" })
+vim.keymap.set("n", "<leader>qw", session_delete, { desc = "Delete session" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
