@@ -188,6 +188,6 @@ vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other 
 
 -- Session management
 vim.keymap.set("n", "<leader>qs", session_select, { desc = "Select session" })
+vim.keymap.set("n", "<leader>qd", session_delete, { desc = "Delete session" })
 vim.keymap.set("n", "<leader>qw", session_write, { desc = "Write session" })
-vim.keymap.set("n", "<leader>qw", session_delete, { desc = "Delete session" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
