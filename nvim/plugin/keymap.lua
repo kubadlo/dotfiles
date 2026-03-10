@@ -133,10 +133,13 @@ vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format" })
 vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- Git
-vim.keymap.set("n", "<leader>gd", "<cmd>Git diff<cr>", { desc = "Diff" })
-vim.keymap.set("n", "<leader>gD", "<cmd>Git diff -- %<cr>", { desc = "Diff buffer" })
-vim.keymap.set("n", "<leader>gl", "<cmd>" .. git_log_cmd .. "<cr>", { desc = "History" })
-vim.keymap.set("n", "<leader>gL", "<cmd>" .. git_log_buf .. "<cr>", { desc = "File history" })
+vim.keymap.set("n", "<leader>gb", "<cmd>Pick git_branches<cr>", { desc = "Branches" })
+vim.keymap.set("n", "<leader>gc", "<cmd>Pick git_commits<cr>", { desc = "Commits" })
+vim.keymap.set("n", "<leader>gh", "<cmd>Pick git_hunks<cr>", { desc = "Hunks" })
+vim.keymap.set("n", "<leader>gd", "<cmd>Git diff -- %<cr>", { desc = "Diff buffer" })
+vim.keymap.set("n", "<leader>gD", "<cmd>Git diff<cr>", { desc = "Diff workspace" })
+vim.keymap.set("n", "<leader>gl", "<cmd>" .. git_log_buf .. "<cr>", { desc = "File history" })
+vim.keymap.set("n", "<leader>gL", "<cmd>" .. git_log_cmd .. "<cr>", { desc = "Workspace history" })
 vim.keymap.set("n", "<leader>gt", git_diff_toggle, { desc = "Toggle diff overlay" })
 vim.keymap.set("n", "<leader>gs", git_status_toggle, { desc = "Show at cursor" })
 
