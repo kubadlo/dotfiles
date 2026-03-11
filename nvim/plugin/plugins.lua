@@ -32,8 +32,8 @@ now(function()
         callback = function()
             if pcall(vim.treesitter.start) then
                 -- Tree-sitter-based folding
-                vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                vim.wo.foldmethod = 'expr'
+                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                vim.wo.foldmethod = "expr"
 
                 -- Start with all folds open
                 vim.wo.foldlevel = 99
