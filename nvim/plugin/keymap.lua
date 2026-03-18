@@ -49,6 +49,7 @@ local function session_write()
     MiniSessions.write(vim.fn.input("Session name: "))
 end
 
+--- Delete an existing session
 local function session_delete()
     MiniSessions.select("delete")
 end
