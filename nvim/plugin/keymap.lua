@@ -1,9 +1,3 @@
---- Open file explorer at current working directory
-local function explore_at_root() MiniFiles.open() end
-
---- Open file explorer at current buffer path
-local function explore_at_file() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end
-
 --- Delete current buffer
 local function buffer_delete()
     MiniBufremove.delete()
@@ -102,8 +96,7 @@ vim.keymap.del("n", "grt")
 vim.keymap.del("x", "gra")
 
 -- File management
-vim.keymap.set("n", "<leader>e", explore_at_file, { desc = "File directory" })
-vim.keymap.set("n", "<leader>E", explore_at_root, { desc = "Root directory" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "File explorer" })
 
 -- Find files
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Files" })

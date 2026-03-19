@@ -133,3 +133,16 @@ later(function()
         },
     })
 end)
+
+later(function()
+    add({ source = "stevearc/oil.nvim" })
+
+    require("oil").setup({
+        columns = {
+            "icon",
+            "permissions",
+            "size",
+            "mtime",
+        },
+    })
+end)
