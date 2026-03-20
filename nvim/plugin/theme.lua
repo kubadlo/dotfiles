@@ -10,12 +10,12 @@ now(function()
         flavour = "macchiato",
         float = {
             transparent = true,
-            solid = false,
+            solid       = false,
         },
         styles = {
             conditionals = {},
-            keywords = { "bold" },
-            misc = {},
+            keywords     = { "bold" },
+            misc         = {},
         },
     })
 

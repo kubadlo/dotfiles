@@ -2,9 +2,9 @@ local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
 now(function()
     add({
-        source = "nvim-treesitter/nvim-treesitter",
+        source   = "nvim-treesitter/nvim-treesitter",
         checkout = "main",
-        hooks = {
+        hooks    = {
             post_checkout = function() vim.cmd("TSUpdate") end,
         },
     })
@@ -32,11 +32,11 @@ now(function()
         callback = function()
             if pcall(vim.treesitter.start) then
                 -- Tree-sitter-based folding
-                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                vim.wo.foldexpr   = "v:lua.vim.treesitter.foldexpr()"
                 vim.wo.foldmethod = "expr"
 
                 -- Start with all folds open
-                vim.wo.foldlevel = 99
+                vim.wo.foldlevel  = 99
 
                 -- Tree-sitter-based indentation
                 vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
@@ -70,9 +70,9 @@ end)
 
 later(function()
     add({
-        source = "saghen/blink.cmp",
+        source   = "saghen/blink.cmp",
         checkout = "v1.9.1",
-        monitor = "main",
+        monitor  = "main",
     })
 
     require("blink.cmp").setup({
@@ -116,15 +116,15 @@ later(function()
             },
         },
         formatters_by_ft = {
-            astro = { "prettier" },
-            css = { "biome", "prettier" },
-            html = { "biome", "prettier" },
-            javascript = { "biome", "prettier" },
+            astro           = { "prettier" },
+            css             = { "biome", "prettier" },
+            html            = { "biome", "prettier" },
+            javascript      = { "biome", "prettier" },
             javascriptreact = { "biome", "prettier" },
-            json = { "biome", "prettier" },
-            jsonc = { "biome", "prettier" },
-            markdown = { "prettier" },
-            typescript = { "biome", "prettier" },
+            json            = { "biome", "prettier" },
+            jsonc           = { "biome", "prettier" },
+            markdown        = { "prettier" },
+            typescript      = { "biome", "prettier" },
             typescriptreact = { "biome", "prettier" },
         },
         format_on_save = {
