@@ -15,16 +15,30 @@ now(function()
 
     require("nvim-treesitter").install({
         "astro",
+        "bash",
         "css",
+        "diff",
+        "dockerfile",
+        "editorconfig",
+        "gitattributes",
+        "gitcommit",
+        "gitignore",
+        "graphql",
         "html",
         "javascript",
+        "jsdoc",
         "json",
         "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
         "rust",
-        "typescript",
+        "sql",
         "toml",
         "tsx",
+        "typescript",
         "yaml",
+        "zsh",
     })
 
     vim.api.nvim_create_autocmd("FileType", {
@@ -62,8 +76,19 @@ later(function()
 
     require("mason-lspconfig").setup({
         ensure_installed = {
+            "astro",
+            "cssls",
+            "eslint",
+            "graphql",
             "harper_ls",
+            "html",
+            "jsonls",
             "lua_ls",
+            "rust_analyzer",
+            "tailwindcss",
+            "vtsls",
+            "yamlls",
+            "dockerls"
         },
     })
 end)
