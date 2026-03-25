@@ -78,8 +78,8 @@ later(function()
         ensure_installed = {
             "astro",
             "cssls",
+            "dockerls",
             "eslint",
-            "graphql",
             "harper_ls",
             "html",
             "jsonls",
@@ -88,7 +88,6 @@ later(function()
             "tailwindcss",
             "vtsls",
             "yamlls",
-            "dockerls"
         },
     })
 end)
