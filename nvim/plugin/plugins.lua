@@ -65,14 +65,11 @@ end)
 
 later(function()
     add({ source = "mason-org/mason.nvim" })
+    add({ source = "mason-org/mason-lspconfig.nvim" })
 
     require("mason").setup({
         install_root_dir = vim.fn.stdpath("data") .. "/site/mason",
     })
-end)
-
-later(function()
-    add({ source = "mason-org/mason-lspconfig.nvim" })
 
     require("mason-lspconfig").setup({
         ensure_installed = {
@@ -142,6 +139,7 @@ later(function()
         formatters_by_ft = {
             astro           = { "prettier" },
             css             = { "biome", "prettier" },
+            graphql         = { "biome", "prettier" },
             html            = { "biome", "prettier" },
             javascript      = { "biome", "prettier" },
             javascriptreact = { "biome", "prettier" },

@@ -17,6 +17,32 @@ now(function()
             keywords     = { "bold" },
             misc         = {},
         },
+        ---@type CtpHighlightOverrideFn
+        custom_highlights = function(colors)
+            return {
+                MiniTablineCurrent = {
+                    style = { "bold" },
+                },
+                MiniTablineModifiedCurrent = {
+                    fg = colors.peach,
+                    style = { "bold" },
+                },
+                MiniTablineModifiedVisible = {
+                    fg = colors.peach,
+                },
+                MiniTablineModifiedHidden = {
+                    fg = colors.peach,
+                },
+                MiniTablineFill = {
+                    bg = colors.mantle,
+                },
+                MiniTablineTabpagesection = {
+                    fg = colors.base,
+                    bg = colors.blue,
+                    style = { "bold" },
+                },
+            }
+        end,
     })
 
     vim.cmd("colorscheme catppuccin")
