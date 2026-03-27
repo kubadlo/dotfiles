@@ -1,4 +1,5 @@
 font-family = JetBrains Mono
+font-style  = Medium
 font-size   = 13
 theme       = Catppuccin Macchiato
 
@@ -11,6 +12,10 @@ bell-features = title,no-attention
 
 # Do not dim inactive splits
 unfocused-split-opacity = 1
+
+# Do not restore size from previous window
+window-width  = 120
+window-height = 40
 
 # Balance padding on window edges
 window-padding-balance  = true
