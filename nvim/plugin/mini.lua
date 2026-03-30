@@ -53,6 +53,12 @@ later(function()
     })
 end)
 
+-- Autocomplete
+later(function()
+    require("mini.completion").setup()
+    require("mini.cmdline").setup()
+end)
+
 -- Text editing
 later(function() require("mini.ai").setup() end)
 later(function() require("mini.align").setup() end)

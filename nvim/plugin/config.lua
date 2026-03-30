@@ -45,6 +45,7 @@ vim.opt.signcolumn     = "yes"
 
 -- Set rounder border for all floating windows
 vim.opt.winborder      = "rounded"
+vim.opt.pumborder      = "rounded"
 
 -- Hide mode since it's visible in status bar
 vim.opt.showmode       = false

@@ -90,33 +90,6 @@ later(function()
 end)
 
 later(function()
-    add({
-        source   = "saghen/blink.cmp",
-        checkout = "v1.9.1",
-        monitor  = "main",
-    })
-
-    require("blink.cmp").setup({
-        completion = {
-            documentation = {
-                auto_show = true,
-            },
-            ghost_text = {
-                enabled = true,
-            },
-            list = {
-                selection = {
-                    preselect = false,
-                },
-            },
-        },
-        keymap = {
-            preset = "enter",
-        },
-    })
-end)
-
-later(function()
     add({ source = "stevearc/conform.nvim" })
 
     require("conform").setup({
