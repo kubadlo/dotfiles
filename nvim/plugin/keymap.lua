@@ -96,7 +96,7 @@ vim.keymap.del("n", "grt")
 vim.keymap.del("x", "gra")
 
 -- File management
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>", { desc = "File explorer" })
+vim.keymap.set("n", "<leader>e", "<cmd>Oil --float<cr>", { desc = "File explorer" })
 
 -- Find files
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Files" })

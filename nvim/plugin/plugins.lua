@@ -139,5 +139,9 @@ later(function()
             "size",
             "mtime",
         },
+        float = {
+            max_height = math.floor(0.618 * vim.o.lines),
+            max_width  = math.floor(0.618 * vim.o.columns),
+        }
     })
 end)
