@@ -16,8 +16,15 @@
   {
     "context": "Workspace",
     "bindings": {
+      "alt-c": ["task::Spawn", { "task_name": "claude" }],
       "alt-g": ["task::Spawn", { "task_name": "git status" }],
       "alt-f": ["task::Spawn", { "task_name": "git history" }],
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "shift-enter": ["terminal::SendText", "\u001b\r"],
     },
   },
 ]

@@ -1,5 +1,11 @@
 [
   {
+    "label": "claude",
+    "command": "EDITOR=zed claude",
+    "reveal_target": "center",
+    "hide": "on_success",
+  },
+  {
     "label": "git status",
     "command": "EDITOR=zed lazygit",
     "reveal_target": "center",
