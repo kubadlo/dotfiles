@@ -11,11 +11,11 @@ vim.opt.shiftwidth     = 4
 vim.opt.softtabstop    = 4
 vim.opt.expandtab      = true
 
--- Set indentation based on file defaults
+-- Indentation based on file defaults
 vim.opt.smartindent    = true
 vim.opt.breakindent    = true
 
--- Set case insensitive search
+-- Case insensitive search
 vim.opt.ignorecase     = true
 vim.opt.smartcase      = true
 
