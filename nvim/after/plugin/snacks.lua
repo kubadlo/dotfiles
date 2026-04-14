@@ -53,7 +53,9 @@ local keymap = {
     { "<leader>si",      function() Snacks.picker.icons() end,                 "Icons" },
     { "<leader>sj",      function() Snacks.picker.jumps() end,                 "Jumps" },
     { "<leader>sk",      function() Snacks.picker.keymaps() end,               "Keymaps" },
+    { "<leader>sl",      function() Snacks.picker.loclist() end,               "Location list" },
     { "<leader>sm",      function() Snacks.picker.marks() end,                 "Marks" },
+    { "<leader>sq",      function() Snacks.picker.qflist() end,                "Quickfix list" },
     { "<leader>sr",      function() Snacks.picker.registers() end,             "Registers" },
     { "<leader>su",      function() Snacks.picker.undo() end,                  "Undo history" },
     --- Words

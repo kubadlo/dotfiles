@@ -14,7 +14,6 @@ local config = {
         { "<leader>h",     group = "Hunks" },
         { "<leader>s",     group = "Search" },
         { "<leader>q",     group = "Sessions" },
-        { "<leader>x",     group = "Diagnostics" },
         { "[",             group = "Previous" },
         { "]",             group = "Next" },
         { "g",             group = "Go to" },
