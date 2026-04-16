@@ -8,7 +8,21 @@ local config = {
     image     = { enabled = true },
     input     = { enabled = true },
     notifier  = { enabled = true },
-    picker    = { enabled = true },
+    picker    = {
+        enabled = true,
+        sources = {
+            loclist = {
+                layout = {
+                    preset = 'ivy',
+                },
+            },
+            qflist = {
+                layout = {
+                    preset = 'ivy',
+                },
+            }
+        },
+    },
     quickfile = { enabled = true },
     words     = { enabled = true },
 }
