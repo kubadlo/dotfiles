@@ -82,6 +82,7 @@ require("snacks").setup(config)
 for _, mapping in pairs(keymap) do
     local lhs  = mapping[1]
     local rhs  = mapping[2]
+
     local opts = vim.tbl_extend("force", mapping[4] or {}, { desc = mapping[3] })
 
     vim.keymap.set("n", lhs, rhs, opts)

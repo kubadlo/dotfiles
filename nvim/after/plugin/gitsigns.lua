@@ -68,7 +68,16 @@ local config = {
         }
 
         for _, mapping in pairs(mappings) do
-            vim.keymap.set(mapping[4] or "n", mapping[1], mapping[2], { desc = mapping[3], buf = bufnr })
+            local lhs  = mapping[1]
+            local rhs  = mapping[2]
+
+            local mode = mapping[4] or "n"
+            local opts = {
+                desc = mapping[3],
+                buf = bufnr,
+            }
+
+            vim.keymap.set(mode, lhs, rhs, opts)
         end
     end
 }
