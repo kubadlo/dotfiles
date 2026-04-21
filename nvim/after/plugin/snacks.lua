@@ -1,9 +1,4 @@
-vim.pack.add({
-    "https://github.com/folke/snacks.nvim",
-})
-
----@type snacks.Config
-local config = {
+require("snacks").setup({
     explorer  = { enabled = true },
     image     = { enabled = true },
     input     = { enabled = true },
@@ -25,7 +20,7 @@ local config = {
     },
     quickfile = { enabled = true },
     words     = { enabled = true },
-}
+})
 
 local keymap = {
     --- Files
@@ -76,8 +71,6 @@ local keymap = {
     { "]]",              function() Snacks.words.jump(vim.v.count1) end,       "Next reference" },
     { "[[",              function() Snacks.words.jump(-vim.v.count1) end,      "Prev reference" },
 }
-
-require("snacks").setup(config)
 
 for _, mapping in pairs(keymap) do
     local lhs  = mapping[1]

@@ -1,9 +1,4 @@
-vim.pack.add({
-    "https://github.com/stevearc/conform.nvim",
-})
-
----@type conform.setupOpts
-local config = {
+require("conform").setup({
     formatters = {
         biome = {
             require_cwd = true,
@@ -12,19 +7,23 @@ local config = {
             condition = (function()
                 local cache = {}
 
+                ---@param _   conform.JobFormatterConfig
+                ---@param ctx conform.Context
                 return function(_, ctx)
-                    local root = vim.fs.root(ctx.filename, { "package.json", ".git" }) or ctx.filename
-                    if cache[root] == nil then
+                    local root = vim.fs.root(ctx.filename, { "package.json", ".git" })
+                    local path = root or ctx.filename
+
+                    if cache[path] == nil then
                         vim.fn.system({
                             "prettier",
                             "--find-config-path",
                             ctx.filename,
                         })
 
-                        cache[root] = vim.v.shell_error == 0
+                        cache[path] = vim.v.shell_error == 0
                     end
 
-                    return cache[root]
+                    return cache[path]
                 end
             end)(),
         },
@@ -48,6 +47,4 @@ local config = {
         lsp_format = "fallback",
     },
 
-}
-
-require("conform").setup(config)
+})

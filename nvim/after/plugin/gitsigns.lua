@@ -1,10 +1,4 @@
-vim.pack.add({
-    "https://github.com/lewis6991/gitsigns.nvim",
-})
-
----@type Gitsigns.Config
----@diagnostic disable-next-line: missing-fields
-local config = {
+require("gitsigns").setup({
     signs = {
         add = {
             text = "▎",
@@ -80,6 +74,4 @@ local config = {
             vim.keymap.set(mode, lhs, rhs, opts)
         end
     end
-}
-
-require("gitsigns").setup(config)
+})
