@@ -45,6 +45,10 @@ vim.opt.signcolumn     = "yes"
 vim.opt.laststatus     = 3
 vim.opt.showmode       = false
 
+-- Set rounder border for all floating windows
+vim.opt.winborder      = "rounded"
+vim.opt.pumborder      = "rounded"
+
 -- Show current filename in terminal title
 vim.opt.title          = true
 
