@@ -1,34 +1,5 @@
-local languages = {
-    "astro",
-    "bash",
-    "css",
-    "diff",
-    "dockerfile",
-    "editorconfig",
-    "gitattributes",
-    "gitcommit",
-    "gitignore",
-    "graphql",
-    "html",
-    "javascript",
-    "jsdoc",
-    "json",
-    "lua",
-    "luadoc",
-    "markdown",
-    "markdown_inline",
-    "rust",
-    "sql",
-    "toml",
-    "tsx",
-    "typescript",
-    "yaml",
-    "zsh",
-}
-
 vim.api.nvim_create_autocmd("FileType", {
     desc     = "Enable treesitter",
-    pattern  = languages,
     callback = function()
         if pcall(vim.treesitter.start) then
             -- Tree-sitter-based folding
@@ -65,4 +36,30 @@ require("nvim-treesitter").setup({
     install_dir = vim.fn.stdpath("data") .. "/site/treesitter",
 })
 
-require("nvim-treesitter").install(languages)
+require("nvim-treesitter").install({
+    "astro",
+    "bash",
+    "css",
+    "diff",
+    "dockerfile",
+    "editorconfig",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "graphql",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "luadoc",
+    "markdown",
+    "markdown_inline",
+    "rust",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "yaml",
+    "zsh",
+})
