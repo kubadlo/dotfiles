@@ -97,6 +97,7 @@ clue.setup({
         { mode = "n", keys = "<leader>g",     desc = "+Git" },
         { mode = "n", keys = "<leader>q",     desc = "+Sessions" },
         { mode = "n", keys = "<leader>s",     desc = "+Search" },
+        { mode = "n", keys = "<leader>w",     desc = "+Workspace" },
         clue.gen_clues.builtin_completion(),
         clue.gen_clues.g(),
         clue.gen_clues.marks(),

@@ -6,7 +6,16 @@ local Session   = require("utils.session")
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
--- Files
+-- Remove conflicting mappings
+vim.keymap.del("n", "gra")
+vim.keymap.del("x", "gra")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grn")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grt")
+vim.keymap.del("n", "grx")
+
+-- Find files
 vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Find files" })
 vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>.", "<cmd>Pick resume<cr>", { desc = "Resume last picker" })
@@ -22,11 +31,6 @@ vim.keymap.set("n", "<leader>sm", "<cmd>Pick marks<cr>", { desc = "Marks" })
 vim.keymap.set("n", "<leader>sr", "<cmd>Pick registers<cr>", { desc = "Registers" })
 vim.keymap.set("n", "<leader>st", "<cmd>Pick hipatterns<cr>", { desc = "Todos" })
 
--- Diagnostics
-vim.keymap.set("n", "gK", vim.diagnostic.open_float, { desc = "Diagnostics hover" })
-vim.keymap.set("n", "<leader>cd", "<cmd>Pick diagnostic scope='current'<cr>", { desc = "Document diagnostics" })
-vim.keymap.set("n", "<leader>cD", "<cmd>Pick diagnostic scope='all'<cr>", { desc = "Workspace diagnostics" })
-
 -- Git
 vim.keymap.set("n", "<leader>gb", "<cmd>Pick git_branches<cr>", { desc = "Branches" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Pick git_commits<cr>", { desc = "Commits" })
@@ -36,16 +40,25 @@ vim.keymap.set("n", "<leader>gD", "<cmd>Git diff<cr>", { desc = "Diff workspace"
 vim.keymap.set("n", "<leader>gs", Git.show_status, { desc = "Show at cursor" })
 vim.keymap.set("n", "<leader>gt", Git.toggle_diff, { desc = "Toggle diff overlay" })
 
+-- Code
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+vim.keymap.set("n", "<leader>cd", "<cmd>Pick diagnostic scope='current'<cr>", { desc = "Buffer diagnostics" })
+vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>", { desc = "Buffer symbols" })
+
+-- Diagnostics
+vim.keymap.set("n", "gK", vim.diagnostic.open_float, { desc = "Diagnostics hover" })
+
 -- LSP
 vim.keymap.set("n", "gd", "<cmd>Pick lsp scope='definition'<cr>", { desc = "Go to definition" })
 vim.keymap.set("n", "gD", "<cmd>Pick lsp scope='declaration'<cr>", { desc = "Go to declaration" })
-vim.keymap.set("n", "gr", "<cmd>Pick lsp scope='references'<cr>", { desc = "References", nowait = true })
+vim.keymap.set("n", "gr", "<cmd>Pick lsp scope='references'<cr>", { desc = "References" })
 vim.keymap.set("n", "gI", "<cmd>Pick lsp scope='implementation'<cr>", { desc = "Go to implementation" })
 vim.keymap.set("n", "gy", "<cmd>Pick lsp scope='type_definition'<cr>", { desc = "Go to type definition" })
-vim.keymap.set("n", "<leader>cs", "<cmd>Pick lsp scope='document_symbol'<cr>", { desc = "Document symbols" })
-vim.keymap.set("n", "<leader>cS", "<cmd>Pick lsp scope='workspace_symbol'<cr>", { desc = "Workspace symbols" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+
+-- Workspace
+vim.keymap.set("n", "<leader>wd", "<cmd>Pick diagnostic scope='all'<cr>", { desc = "Workspace diagnostics" })
+vim.keymap.set("n", "<leader>ws", "<cmd>Pick lsp scope='workspace_symbol'<cr>", { desc = "Workspace symbols" })
 
 -- Buffers
 vim.keymap.set("n", "<leader>bb", "<cmd>b#<cr>", { desc = "Toggle buffer" })
