@@ -1,0 +1,4 @@
+gui:
+  nerdFontsVersion: "3"
+services:
+  "gitlab.orfeus-space.com": "gitlab:gitlab.orfeus-space.com"
