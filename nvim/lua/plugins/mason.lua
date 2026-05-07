@@ -25,5 +25,3 @@ require("mason-lspconfig").setup({
         "yamlls",
     },
 })
-
-vim.schedule(function() vim.cmd("MasonUpdate") end)
