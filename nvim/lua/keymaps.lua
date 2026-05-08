@@ -1,6 +1,5 @@
 local Buffer    = require("utils.buffer")
 local Files     = require("utils.files")
-local Git       = require("utils.git")
 local Session   = require("utils.session")
 
 -- Set <space> as a leader key
@@ -32,13 +31,10 @@ vim.keymap.set("n", "<leader>sr", "<cmd>Pick registers<cr>", { desc = "Registers
 vim.keymap.set("n", "<leader>st", "<cmd>Pick hipatterns<cr>", { desc = "Todos" })
 
 -- Git
+vim.keymap.set("n", "<leader>gs", "<cmd>CodeDiff<cr>", { desc = "Status" })
 vim.keymap.set("n", "<leader>gb", "<cmd>Pick git_branches<cr>", { desc = "Branches" })
 vim.keymap.set("n", "<leader>gc", "<cmd>Pick git_commits<cr>", { desc = "Commits" })
 vim.keymap.set("n", "<leader>gh", "<cmd>Pick git_hunks<cr>", { desc = "Hunks" })
-vim.keymap.set("n", "<leader>gd", "<cmd>Git diff -- %<cr>", { desc = "Diff buffer" })
-vim.keymap.set("n", "<leader>gD", "<cmd>Git diff<cr>", { desc = "Diff workspace" })
-vim.keymap.set("n", "<leader>gs", Git.show_status, { desc = "Show at cursor" })
-vim.keymap.set("n", "<leader>gt", Git.toggle_diff, { desc = "Toggle diff overlay" })
 
 -- Code
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
