@@ -7,6 +7,9 @@ vim.pack.add({
 
 require("catppuccin").setup({
     flavour = "macchiato",
+    float = {
+        transparent = true,
+    },
     styles = {
         conditionals = {},
         keywords     = { "bold" },
@@ -33,6 +36,13 @@ require("catppuccin").setup({
                 fg = colors.base,
                 bg = colors.blue,
                 style = { "bold" },
+            },
+            Pmenu = {
+                bg = colors.base,
+            },
+            PmenuBorder = {
+                bg = colors.base,
+                fg = colors.blue,
             },
         }
     end
