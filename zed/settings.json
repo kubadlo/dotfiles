@@ -31,6 +31,42 @@
   "edit_predictions": {
     "mode": "subtle",
   },
+  "languages": {
+    "JavaScript": {
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
+    },
+    "TypeScript": {
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
+    },
+    "TSX": {
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+          "extraArgs": ["--", "-W", "clippy::pedantic"],
+        },
+      },
+    },
+  },
   "project_panel": {
     "dock": "left",
     "default_width": 320,
@@ -45,6 +81,7 @@
     "default_width": 320,
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "tabs": {
