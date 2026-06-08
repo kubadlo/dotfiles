@@ -1,6 +1,70 @@
-local Buffer    = require("utils.buffer")
-local Files     = require("utils.files")
-local Session   = require("utils.session")
+---Returns all listed buffers that can be safely deleted
+local function get_listed_buffers()
+    local buffers   = vim.api.nvim_list_bufs()
+    local predicate = function(buffer)
+        return vim.bo[buffer].buflisted
+    end
+
+    return vim.tbl_filter(predicate, buffers)
+end
+
+---Delete current buffer
+local function delete_current_buffer()
+    MiniBufremove.delete()
+end
+
+---Delete all buffers
+local function delete_all_buffers()
+    local buffers = get_listed_buffers()
+
+    for _, buf_id in ipairs(buffers) do
+        pcall(MiniBufremove.delete, buf_id)
+    end
+end
+
+---Delete all buffers except the current one
+local function delete_other_buffers()
+    local current = vim.api.nvim_get_current_buf()
+    local buffers = get_listed_buffers()
+
+    for _, buf_id in ipairs(buffers) do
+        if buf_id ~= current then
+            pcall(MiniBufremove.delete, buf_id)
+        end
+    end
+end
+
+---Open file explorer
+local function browse_files()
+    local buf_name = vim.api.nvim_buf_get_name(0)
+    local buf_mini = string.find(buf_name, "^ministarter")
+
+    if buf_mini ~= nil then
+        -- Dashboard is not a valid file buffer. Let's open
+        -- the file explorer at the project root.
+        MiniFiles.open()
+    else
+        MiniFiles.open(vim.api.nvim_buf_get_name(0))
+    end
+end
+
+---Select a previously created session
+local function select_session()
+    MiniSessions.select()
+end
+
+---Write a new session
+local function write_session()
+    local name = vim.fn.input("Name: ")
+    if name ~= "" then
+        MiniSessions.write(name)
+    end
+end
+
+---Delete an existing session
+local function delete_session()
+    MiniSessions.select("delete")
+end
 
 -- Set <space> as a leader key
 vim.g.mapleader = " "
@@ -19,7 +83,7 @@ vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Find fil
 vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>.", "<cmd>Pick resume<cr>", { desc = "Resume last picker" })
 vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Find in files" })
-vim.keymap.set("n", "<leader>e", Files.browse, { desc = "File explorer" })
+vim.keymap.set("n", "<leader>e", browse_files, { desc = "File explorer" })
 
 -- Search
 vim.keymap.set("n", "<leader>sc", "<cmd>Pick commands<cr>", { desc = "Commands" })
@@ -58,9 +122,9 @@ vim.keymap.set("n", "<leader>ws", "<cmd>Pick lsp scope='workspace_symbol'<cr>", 
 
 -- Buffers
 vim.keymap.set("n", "<leader>bb", "<cmd>b#<cr>", { desc = "Toggle buffer" })
-vim.keymap.set("n", "<leader>bd", Buffer.delete_buffer, { desc = "Delete buffer" })
-vim.keymap.set("n", "<leader>ba", Buffer.delete_all_buffers, { desc = "Delete all buffers" })
-vim.keymap.set("n", "<leader>bo", Buffer.delete_other_buffers, { desc = "Delete other buffers" })
+vim.keymap.set("n", "<leader>bd", delete_current_buffer, { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>ba", delete_all_buffers, { desc = "Delete all buffers" })
+vim.keymap.set("n", "<leader>bo", delete_other_buffers, { desc = "Delete other buffers" })
 
 -- Tabs
 vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
@@ -68,9 +132,9 @@ vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close tab" 
 vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
 
 -- Sessions
-vim.keymap.set("n", "<leader>qw", Session.write, { desc = "Write session" })
-vim.keymap.set("n", "<leader>qs", Session.select, { desc = "Select session" })
-vim.keymap.set("n", "<leader>qd", Session.delete, { desc = "Delete session" })
+vim.keymap.set("n", "<leader>qw", write_session, { desc = "Write session" })
+vim.keymap.set("n", "<leader>qs", select_session, { desc = "Select session" })
+vim.keymap.set("n", "<leader>qd", delete_session, { desc = "Delete session" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Better indenting

@@ -1,5 +1,55 @@
-vim.pack.add({
-    "https://github.com/stevearc/conform.nvim",
+require("mason").setup({
+    install_root_dir = vim.fn.stdpath("data") .. "/site/mason",
+})
+
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "astro",
+        "cssls",
+        "dockerls",
+        "eslint",
+        "graphql",
+        "harper_ls",
+        "html",
+        "jsonls",
+        "lua_ls",
+        "rust_analyzer",
+        "tailwindcss",
+        "vtsls",
+        "yamlls",
+    },
+})
+
+require("nvim-treesitter").setup({
+    install_dir = vim.fn.stdpath("data") .. "/site/treesitter",
+})
+
+require("nvim-treesitter").install({
+    "astro",
+    "bash",
+    "css",
+    "diff",
+    "dockerfile",
+    "editorconfig",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
+    "graphql",
+    "html",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "luadoc",
+    "markdown",
+    "markdown_inline",
+    "rust",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "yaml",
+    "zsh",
 })
 
 require("conform").setup({
@@ -49,5 +99,11 @@ require("conform").setup({
     format_on_save = {
         timeout_ms = 500,
         lsp_format = "fallback",
+    },
+})
+
+require("codediff").setup({
+    explorer = {
+        view_mode = "tree",
     },
 })

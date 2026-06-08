@@ -1,7 +1,3 @@
-vim.pack.add({
-    "https://github.com/nvim-mini/mini.nvim",
-})
-
 -- User interface
 require("mini.icons").setup()
 require("mini.statusline").setup()

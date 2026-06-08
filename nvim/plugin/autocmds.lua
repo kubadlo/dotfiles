@@ -27,39 +27,3 @@ vim.api.nvim_create_autocmd("PackChanged", {
         end
     end
 })
-
-vim.pack.add({
-    "https://github.com/nvim-treesitter/nvim-treesitter",
-})
-
-require("nvim-treesitter").setup({
-    install_dir = vim.fn.stdpath("data") .. "/site/treesitter",
-})
-
-require("nvim-treesitter").install({
-    "astro",
-    "bash",
-    "css",
-    "diff",
-    "dockerfile",
-    "editorconfig",
-    "gitattributes",
-    "gitcommit",
-    "gitignore",
-    "graphql",
-    "html",
-    "javascript",
-    "jsdoc",
-    "json",
-    "lua",
-    "luadoc",
-    "markdown",
-    "markdown_inline",
-    "rust",
-    "sql",
-    "toml",
-    "tsx",
-    "typescript",
-    "yaml",
-    "zsh",
-})
