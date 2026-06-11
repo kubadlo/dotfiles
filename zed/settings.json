@@ -31,6 +31,16 @@
   "edit_predictions": {
     "mode": "subtle",
   },
+  "auto_install_extensions": {
+    "astro": true,
+    "catppuccin": true,
+    "catppuccin-icons": true,
+    "git-firefly": true,
+    "graphql": true,
+    "html": true,
+    "toml": true,
+    "tsgo": true,
+  },
   "languages": {
     "JavaScript": {
       "language_servers": [
