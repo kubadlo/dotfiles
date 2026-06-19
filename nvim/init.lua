@@ -1,4 +1,5 @@
 vim.pack.add({
+    { src = "https://github.com/saghen/blink.cmp",                name = "blink",          version = vim.version.range("1.*") },
     { src = "https://github.com/catppuccin/nvim",                 name = "catppuccin" },
     { src = "https://github.com/esmuellert/codediff.nvim",        name = "codediff" },
     { src = "https://github.com/stevearc/conform.nvim",           name = "conform" },

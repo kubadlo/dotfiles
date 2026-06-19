@@ -102,6 +102,25 @@ require("conform").setup({
     },
 })
 
+require("blink.cmp").setup({
+    completion = {
+        documentation = {
+            auto_show = true,
+        },
+        ghost_text = {
+            enabled = true,
+        },
+        list = {
+            selection = {
+                preselect = false,
+            },
+        },
+    },
+    keymap = {
+        preset = "enter",
+    },
+})
+
 require("codediff").setup({
     explorer = {
         view_mode = "tree",

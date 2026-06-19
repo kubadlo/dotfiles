@@ -1,5 +1,5 @@
 require("catppuccin").setup({
-    flavour = "macchiato",
+    flavour = "mocha",
     float = {
         transparent = true,
     },
@@ -9,36 +9,15 @@ require("catppuccin").setup({
     },
     custom_highlights = function(colors)
         return {
-            MiniTablineCurrent = {
-                style = { "bold" },
-            },
-            MiniTablineModifiedCurrent = {
-                fg = colors.peach,
-                style = { "bold" },
-            },
-            MiniTablineModifiedVisible = {
-                fg = colors.peach,
-            },
-            MiniTablineModifiedHidden = {
-                fg = colors.peach,
-            },
-            MiniTablineFill = {
-                bg = colors.mantle,
-            },
-            MiniTablineTabpagesection = {
-                fg = colors.base,
-                bg = colors.blue,
-                style = { "bold" },
-            },
-            Pmenu = {
+            BlinkCmpMenu = {
                 bg = colors.base,
             },
-            PmenuBorder = {
+            BlinkCmpMenuBorder = {
                 bg = colors.base,
                 fg = colors.blue,
             },
         }
-    end
+    end,
 })
 
 vim.cmd("colorscheme catppuccin")

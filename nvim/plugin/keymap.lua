@@ -48,24 +48,6 @@ local function browse_files()
     end
 end
 
----Select a previously created session
-local function select_session()
-    MiniSessions.select()
-end
-
----Write a new session
-local function write_session()
-    local name = vim.fn.input("Name: ")
-    if name ~= "" then
-        MiniSessions.write(name)
-    end
-end
-
----Delete an existing session
-local function delete_session()
-    MiniSessions.select("delete")
-end
-
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
@@ -130,12 +112,6 @@ vim.keymap.set("n", "<leader>bo", delete_other_buffers, { desc = "Delete other b
 vim.keymap.set("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New tab" })
 vim.keymap.set("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close tab" })
 vim.keymap.set("n", "<leader><tab>o", "<cmd>tabonly<cr>", { desc = "Close other tabs" })
-
--- Sessions
-vim.keymap.set("n", "<leader>qw", write_session, { desc = "Write session" })
-vim.keymap.set("n", "<leader>qs", select_session, { desc = "Select session" })
-vim.keymap.set("n", "<leader>qd", delete_session, { desc = "Delete session" })
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Better indenting
 vim.keymap.set("v", "<", "<gv")

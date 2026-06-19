@@ -43,7 +43,6 @@ vim.opt.signcolumn     = "yes"
 
 -- Use one global status bar per Neovim instance
 vim.opt.laststatus     = 3
-vim.opt.showmode       = false
 
 -- Set rounder border for all floating windows
 vim.opt.winborder      = "rounded"

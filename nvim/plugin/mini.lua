@@ -1,15 +1,5 @@
 -- User interface
 require("mini.icons").setup()
-require("mini.statusline").setup()
-require("mini.tabline").setup({
-    tabpage_section = 'right',
-})
-
--- Session management
-require("mini.sessions").setup()
-require("mini.starter").setup()
-
--- File explorer
 require("mini.files").setup({
     mappings = {
         go_in = "<cr>",
@@ -23,6 +13,7 @@ require("mini.files").setup({
 
 -- Pickers
 require("mini.extra").setup()
+require("mini.input").setup()
 require("mini.pick").setup({
     window = {
         config = function()
@@ -59,10 +50,6 @@ require("mini.diff").setup({
 -- General workflow
 require("mini.bracketed").setup()
 require("mini.bufremove").setup()
-
--- Autocomplete
-require("mini.cmdline").setup()
-require("mini.completion").setup()
 
 -- Text editing
 require("mini.ai").setup()
