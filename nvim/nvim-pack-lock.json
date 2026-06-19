@@ -18,7 +18,7 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "lspconfig": {
-      "rev": "fef8b117ad5fb73943913f444f22065c4b834a60",
+      "rev": "bfcc0171a43f22afa61d927ffe9fcb6cb85dc99e",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "mason": {
@@ -30,7 +30,7 @@
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mini": {
-      "rev": "bf8169f3e518be8de3f88073ace37d91f576cb04",
+      "rev": "ecb05c524a99490c95a8862eb5cb09b1e629ed42",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "treesitter": {

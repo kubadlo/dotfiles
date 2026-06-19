@@ -15,7 +15,7 @@ require("mason-lspconfig").setup({
         "lua_ls",
         "rust_analyzer",
         "tailwindcss",
-        "vtsls",
+        "tsgo",
         "yamlls",
     },
 })
