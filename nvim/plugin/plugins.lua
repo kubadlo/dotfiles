@@ -122,6 +122,9 @@ require("blink.cmp").setup({
 })
 
 require("codediff").setup({
+    diff = {
+        conflict_result_position = "center",
+    },
     explorer = {
         view_mode = "tree",
     },
