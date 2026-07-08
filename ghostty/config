@@ -1,7 +1,11 @@
+theme       = Catppuccin Mocha
+
 font-family = JetBrains Mono
 font-style  = Medium
 font-size   = 13
-theme       = Catppuccin Macchiato
+
+# Increase line height
+adjust-cell-height = +5%
 
 # macOS specific configuration
 macos-icon          = xray
@@ -16,6 +20,3 @@ unfocused-split-opacity = 1
 # Do not restore size from previous window
 window-width  = 120
 window-height = 40
-
-# Balance padding on window edges
-window-padding-balance  = true
