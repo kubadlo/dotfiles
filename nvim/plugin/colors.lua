@@ -16,6 +16,27 @@ require("catppuccin").setup({
                 bg = colors.base,
                 fg = colors.blue,
             },
+            MiniTablineCurrent = {
+                style = { "bold" },
+            },
+            MiniTablineModifiedCurrent = {
+                fg = colors.peach,
+                style = { "bold" },
+            },
+            MiniTablineModifiedVisible = {
+                fg = colors.peach,
+            },
+            MiniTablineModifiedHidden = {
+                fg = colors.peach,
+            },
+            MiniTablineFill = {
+                bg = colors.mantle,
+            },
+            MiniTablineTabpagesection = {
+                fg = colors.base,
+                bg = colors.blue,
+                style = { "bold" },
+            },
         }
     end,
 })

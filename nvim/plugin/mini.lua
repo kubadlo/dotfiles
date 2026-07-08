@@ -11,6 +11,15 @@ require("mini.files").setup({
     },
 })
 
+require("mini.statusline").setup()
+require("mini.tabline").setup({
+    tabpage_section = 'right',
+})
+
+-- Session management
+require("mini.sessions").setup()
+require("mini.starter").setup()
+
 -- Pickers
 require("mini.extra").setup()
 require("mini.input").setup()
