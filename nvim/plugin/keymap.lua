@@ -34,20 +34,6 @@ local function delete_other_buffers()
     end
 end
 
----Open file explorer
-local function browse_files()
-    local buf_name = vim.api.nvim_buf_get_name(0)
-    local buf_mini = string.find(buf_name, "^ministarter")
-
-    if buf_mini ~= nil then
-        -- Dashboard is not a valid file buffer. Let's open
-        -- the file explorer at the project root.
-        MiniFiles.open()
-    else
-        MiniFiles.open(vim.api.nvim_buf_get_name(0))
-    end
-end
-
 -- Set <space> as a leader key
 vim.g.mapleader = " "
 
@@ -65,7 +51,7 @@ vim.keymap.set("n", "<leader><space>", "<cmd>Pick files<cr>", { desc = "Find fil
 vim.keymap.set("n", "<leader>,", "<cmd>Pick buffers<cr>", { desc = "Find buffers" })
 vim.keymap.set("n", "<leader>.", "<cmd>Pick resume<cr>", { desc = "Resume last picker" })
 vim.keymap.set("n", "<leader>/", "<cmd>Pick grep_live<cr>", { desc = "Find in files" })
-vim.keymap.set("n", "<leader>e", browse_files, { desc = "File explorer" })
+vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFocus<cr>", { desc = "File explorer" })
 
 -- Search
 vim.keymap.set("n", "<leader>sc", "<cmd>Pick commands<cr>", { desc = "Commands" })

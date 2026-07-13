@@ -7,5 +7,6 @@ vim.pack.add({
     { src = "https://github.com/mason-org/mason.nvim",            name = "mason" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim",  name = "mason-lspconfig" },
     { src = "https://github.com/nvim-mini/mini.nvim",             name = "mini" },
+    { src = "https://github.com/nvim-tree/nvim-tree.lua",         name = "nvim-tree" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", name = "treesitter" },
 })

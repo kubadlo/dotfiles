@@ -1,24 +1,8 @@
 -- User interface
 require("mini.icons").setup()
-require("mini.files").setup({
-    mappings = {
-        go_in = "<cr>",
-        go_out = "<left>"
-    },
-    windows = {
-        width_focus   = 40,
-        width_nofocus = 40,
-    },
-})
-
-require("mini.statusline").setup()
 require("mini.tabline").setup({
     tabpage_section = 'right',
 })
-
--- Session management
-require("mini.sessions").setup()
-require("mini.starter").setup()
 
 -- Pickers
 require("mini.extra").setup()
@@ -145,3 +129,9 @@ hipatterns.setup({
         hex_color = hipatterns.gen_highlighter.hex_color(),
     },
 })
+
+-- Mock 'nvim-tree/nvim-web-devicons' for plugins without 'mini.icons' support
+MiniIcons.mock_nvim_web_devicons()
+
+-- Add LSP kind icons
+MiniIcons.tweak_lsp_kind()

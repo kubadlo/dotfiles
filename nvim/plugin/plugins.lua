@@ -127,5 +127,12 @@ require("codediff").setup({
     },
     explorer = {
         view_mode = "tree",
+        width     = 36,
     },
+})
+
+require("nvim-tree").setup({
+    view = {
+        width = 36,
+    }
 })
