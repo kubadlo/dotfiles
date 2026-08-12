@@ -37,10 +37,6 @@ set splitright
 set scrolloff=5
 set sidescrolloff=5
 
-" Enable true color support and set theme
-set termguicolors
-colorscheme catppuccin_macchiato
-
 " Show current file name in terminal title
 set title
 
