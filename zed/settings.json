@@ -1,4 +1,5 @@
 {
+  "base_keymap": "Zed",
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 13,
   "ui_font_family": ".SystemUIFont",
@@ -22,6 +23,28 @@
     "enabled": true,
     "delay_ms": 250,
   },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+    "show_diagnostics": "errors",
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 320,
+  },
+  "git_panel": {
+    "dock": "left",
+    "default_width": 320,
+    "tree_view": true,
+  },
+  "collaboration_panel": {
+    "dock": "left",
+    "default_width": 320,
+  },
+  "outline_panel": {
+    "dock": "left",
+    "default_width": 320,
+  },
   "agent": {
     "dock": "right",
     "sidebar_side": "right",
@@ -44,7 +67,7 @@
   "languages": {
     "JavaScript": {
       "language_servers": [
-        "tsgo",
+        "typescript-ls",
         "!vtsls",
         "!typescript-language-server",
         "...",
@@ -52,7 +75,7 @@
     },
     "TypeScript": {
       "language_servers": [
-        "tsgo",
+        "typescript-ls",
         "!vtsls",
         "!typescript-language-server",
         "...",
@@ -60,7 +83,7 @@
     },
     "TSX": {
       "language_servers": [
-        "tsgo",
+        "typescript-ls",
         "!vtsls",
         "!typescript-language-server",
         "...",
@@ -76,27 +99,5 @@
         },
       },
     },
-  },
-  "project_panel": {
-    "dock": "left",
-    "default_width": 320,
-  },
-  "git_panel": {
-    "dock": "left",
-    "default_width": 320,
-    "tree_view": true,
-  },
-  "outline_panel": {
-    "dock": "left",
-    "default_width": 320,
-  },
-  "collaboration_panel": {
-    "dock": "left",
-    "button": false,
-  },
-  "tabs": {
-    "file_icons": true,
-    "git_status": true,
-    "show_diagnostics": "errors",
   },
 }
